@@ -1,17 +1,16 @@
 export type Records = IRecord[]
 
 export interface ICreateRecordRequest {
-  data: object; // Данные для обновления записи
+  data: object;
 }
 export interface IUpdateRecordRequest {
-  id: string; // ID записи
-  data: object; // Данные для обновления записи
+  id: string;
+  data: object;
 }
 
 export interface IUpdateRecordResponse {
-  success: boolean; // Поле, указывающее на успешное обновление
-  message?: string; // Опциональное поле с сообщением об ошибке
-  // Другие поля, если они возвращаются вашим сервером
+  success: boolean;
+  message?: string;
 }
 
 export interface IRecord {
@@ -21,9 +20,45 @@ export interface IRecord {
   createdAt: string
   updatedAt: string
 }
-
 export interface IProfile {
+  city: City
   name: string
-  country: string
-  state: string
+  state: State
+  country: Country
 }
+
+export interface City {
+  name: string
+  latitude?: string | null | undefined;
+  longitude?: string | null | undefined;
+  stateCode: string
+  countryCode: string
+}
+
+export interface State {
+  name: string
+  isoCode: string
+  latitude?: string | null | undefined;
+  longitude?: string | null | undefined;
+  countryCode: string
+}
+
+export interface Country {
+  flag: string
+  name: string
+  isoCode: string
+  currency: string
+  latitude?: string | null | undefined;
+  longitude?: string | null | undefined;
+  phonecode: string
+  timezones?: Timezone[] | undefined
+}
+
+export interface Timezone {
+  tzName: string
+  zoneName: string
+  gmtOffset: number
+  abbreviation: string
+  gmtOffsetName: string
+}
+

@@ -1,28 +1,33 @@
 import React from 'react';
+import MUIButton from '@mui/material/Button';
 
 interface ButtonProps {
   type: 'submit' | 'button' | 'reset';
   onClick: () => void;
-  className?: string;
   children?: React.ReactNode;
+  variant?: 'contained' | 'outlined' | 'text';
+  sx?: object;
+  color?: 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning';
 }
 
 const Button: React.FC<ButtonProps> = ({
   type = 'button',
   onClick,
-  className = '',
+  variant = 'contained',
   children,
+  sx,
+  color
 }) => {
   return (
-    <button
+    <MUIButton
+      variant={variant}
       type={type}
       onClick={onClick}
-      className={`text-white bg-blue-700 hover:bg-blue-800 focus:ring-4
-       focus:outline-none focus:ring-blue-300 font-medium rounded-lg
-       text-sm w-full sm:w-auto px-5 py-2.5 text-center ${className}`}
+      sx={sx}
+      color={color}
     >
       {children}
-    </button>
+    </MUIButton>
   );
 };
 

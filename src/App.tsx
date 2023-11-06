@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 
 import Home from './pages/Home.tsx';
-import Navigation from './components/layout/Navigation.tsx';
 import Record from './pages/Record.tsx';
+import Navigation from './components/layout/Navigation.tsx';
 
 const App = () => {
   return (

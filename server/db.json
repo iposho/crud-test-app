@@ -2,333 +2,570 @@
   "records": [
     {
       "id": 1,
-      "email": "ferguson_shaw@translink.suzuki",
+      "email": "sos@kuzyak.in",
       "profile": {
         "name": "Сос Саркисян",
-        "country": "Armenia",
-        "state": "Puerto Rico"
+        "country": {
+          "name": "Colombia",
+          "isoCode": "CO",
+          "flag": "🇨🇴",
+          "phonecode": "57",
+          "currency": "COP",
+          "latitude": "4.00000000",
+          "longitude": "-72.00000000",
+          "timezones": [
+            {
+              "zoneName": "America/Bogota",
+              "gmtOffset": -18000,
+              "gmtOffsetName": "UTC-05:00",
+              "abbreviation": "COT",
+              "tzName": "Colombia Time"
+            }
+          ]
+        },
+        "state": {
+          "name": "Bogotá D.C.",
+          "isoCode": "DC",
+          "countryCode": "CO",
+          "latitude": "4.28204150",
+          "longitude": "-74.50270420"
+        },
+        "city": {
+          "name": "Bogotá D.C.",
+          "countryCode": "CO",
+          "stateCode": "DC",
+          "latitude": "4.61263889",
+          "longitude": "-74.07050000"
+        }
       },
-      "createdAt": "2012-10-05T07:01:58.097Z",
-      "updatedAt": "2012-10-06T07:01:58.097Z"
+      "createdAt": "2023-11-06T19:25:34.092Z",
+      "updatedAt": "2023-11-06T19:25:34.092Z"
     },
     {
       "id": 2,
-      "email": "franks_wallace@stelaecor.nyc",
+      "email": "pope_jordan@undefined.pohl",
       "profile": {
-        "name": "Franks Wallace",
-        "country": "Armenia",
-        "state": "Oklahoma"
+        "city": {
+          "name": "Bogotá D.C.",
+          "latitude": "4.61263889",
+          "longitude": "-74.07050000",
+          "stateCode": "DC",
+          "countryCode": "CO"
+        },
+        "name": "Pope Jordan",
+        "state": {
+          "name": "Bogotá D.C.",
+          "isoCode": "DC",
+          "latitude": "4.28204150",
+          "longitude": "-74.50270420",
+          "countryCode": "CO"
+        },
+        "country": {
+          "flag": "🇨🇴",
+          "name": "Colombia",
+          "isoCode": "CO",
+          "currency": "COP",
+          "latitude": "4.00000000",
+          "longitude": "-72.00000000",
+          "phonecode": "57",
+          "timezones": [
+            {
+              "tzName": "Colombia Time",
+              "zoneName": "America/Bogota",
+              "gmtOffset": -18000,
+              "abbreviation": "COT",
+              "gmtOffsetName": "UTC-05:00"
+            }
+          ]
+        }
       },
-      "createdAt": "2010-09-28T16:43:59.257Z",
-      "updatedAt": "2010-09-29T16:43:59.257Z"
+      "createdAt": "2010-03-26T14:07:43.131Z",
+      "updatedAt": "2010-03-27T14:07:43.131Z"
     },
     {
       "id": 3,
-      "email": "burt_grimes@earthpure.je",
+      "email": "perez_cherry@undefined.info",
       "profile": {
-        "name": "Burt Grimes",
-        "country": "Saint Vincent and The Grenadines",
-        "state": "Texas"
+        "city": {
+          "name": "Bogotá D.C.",
+          "latitude": "4.61263889",
+          "longitude": "-74.07050000",
+          "stateCode": "DC",
+          "countryCode": "CO"
+        },
+        "name": "Perez Cherry",
+        "state": {
+          "name": "Bogotá D.C.",
+          "isoCode": "DC",
+          "latitude": "4.28204150",
+          "longitude": "-74.50270420",
+          "countryCode": "CO"
+        },
+        "country": {
+          "flag": "🇨🇴",
+          "name": "Colombia",
+          "isoCode": "CO",
+          "currency": "COP",
+          "latitude": "4.00000000",
+          "longitude": "-72.00000000",
+          "phonecode": "57",
+          "timezones": [
+            {
+              "tzName": "Colombia Time",
+              "zoneName": "America/Bogota",
+              "gmtOffset": -18000,
+              "abbreviation": "COT",
+              "gmtOffsetName": "UTC-05:00"
+            }
+          ]
+        }
       },
-      "createdAt": "2013-12-26T22:26:01.409Z",
-      "updatedAt": "2013-12-27T22:26:01.409Z"
+      "createdAt": "2012-05-05T04:58:45.022Z",
+      "updatedAt": "2012-05-06T04:58:45.022Z"
     },
     {
       "id": 4,
-      "email": "angelina_wilkinson@gallaxia.directory",
+      "email": "mitzi_montoya@undefined.hr",
       "profile": {
-        "name": "Angelina Wilkinson",
-        "country": "Armenia",
-        "state": "Pennsylvania"
+        "city": {
+          "name": "Bogotá D.C.",
+          "latitude": "4.61263889",
+          "longitude": "-74.07050000",
+          "stateCode": "DC",
+          "countryCode": "CO"
+        },
+        "name": "Mitzi Montoya",
+        "state": {
+          "name": "Bogotá D.C.",
+          "isoCode": "DC",
+          "latitude": "4.28204150",
+          "longitude": "-74.50270420",
+          "countryCode": "CO"
+        },
+        "country": {
+          "flag": "🇨🇴",
+          "name": "Colombia",
+          "isoCode": "CO",
+          "currency": "COP",
+          "latitude": "4.00000000",
+          "longitude": "-72.00000000",
+          "phonecode": "57",
+          "timezones": [
+            {
+              "tzName": "Colombia Time",
+              "zoneName": "America/Bogota",
+              "gmtOffset": -18000,
+              "abbreviation": "COT",
+              "gmtOffsetName": "UTC-05:00"
+            }
+          ]
+        }
       },
-      "createdAt": "2013-02-24T16:45:06.576Z",
-      "updatedAt": "2013-02-25T16:45:06.576Z"
+      "createdAt": "2013-12-31T09:51:19.500Z",
+      "updatedAt": "2014-01-01T09:51:19.500Z"
     },
     {
       "id": 5,
-      "email": "pacheco_morris@deepends.adult",
+      "email": "bishop_barnes@undefined.rio",
       "profile": {
-        "name": "Pacheco Morris",
-        "country": "United States",
-        "state": "Louisiana"
+        "city": {
+          "name": "Bogotá D.C.",
+          "latitude": "4.61263889",
+          "longitude": "-74.07050000",
+          "stateCode": "DC",
+          "countryCode": "CO"
+        },
+        "name": "Bishop Barnes",
+        "state": {
+          "name": "Bogotá D.C.",
+          "isoCode": "DC",
+          "latitude": "4.28204150",
+          "longitude": "-74.50270420",
+          "countryCode": "CO"
+        },
+        "country": {
+          "flag": "🇨🇴",
+          "name": "Colombia",
+          "isoCode": "CO",
+          "currency": "COP",
+          "latitude": "4.00000000",
+          "longitude": "-72.00000000",
+          "phonecode": "57",
+          "timezones": [
+            {
+              "tzName": "Colombia Time",
+              "zoneName": "America/Bogota",
+              "gmtOffset": -18000,
+              "abbreviation": "COT",
+              "gmtOffsetName": "UTC-05:00"
+            }
+          ]
+        }
       },
-      "createdAt": "2013-09-17T05:32:34.975Z",
-      "updatedAt": "2013-09-18T05:32:34.975Z"
+      "createdAt": "2010-07-28T10:08:55.923Z",
+      "updatedAt": "2010-07-29T10:08:55.923Z"
     },
     {
       "id": 6,
-      "email": "adams_stark@digigen.date",
+      "email": "phoebe_becker@undefined.qa",
       "profile": {
-        "name": "Adams Stark",
-        "country": "United States",
-        "state": "Minnesota"
+        "city": {
+          "name": "Bogotá D.C.",
+          "latitude": "4.61263889",
+          "longitude": "-74.07050000",
+          "stateCode": "DC",
+          "countryCode": "CO"
+        },
+        "name": "Phoebe Becker",
+        "state": {
+          "name": "Bogotá D.C.",
+          "isoCode": "DC",
+          "latitude": "4.28204150",
+          "longitude": "-74.50270420",
+          "countryCode": "CO"
+        },
+        "country": {
+          "flag": "🇨🇴",
+          "name": "Colombia",
+          "isoCode": "CO",
+          "currency": "COP",
+          "latitude": "4.00000000",
+          "longitude": "-72.00000000",
+          "phonecode": "57",
+          "timezones": [
+            {
+              "tzName": "Colombia Time",
+              "zoneName": "America/Bogota",
+              "gmtOffset": -18000,
+              "abbreviation": "COT",
+              "gmtOffsetName": "UTC-05:00"
+            }
+          ]
+        }
       },
-      "createdAt": "2010-06-05T23:53:14.104Z",
-      "updatedAt": "2010-06-06T23:53:14.104Z"
+      "createdAt": "2012-07-13T19:56:37.714Z",
+      "updatedAt": "2012-07-14T19:56:37.714Z"
     },
     {
       "id": 7,
-      "email": "sondra_mccarthy@medifax.insure",
+      "email": "misty_sloan@undefined.km",
       "profile": {
-        "name": "Sondra Mccarthy",
-        "country": "United States",
-        "state": "Indiana"
+        "city": {
+          "name": "Bogotá D.C.",
+          "latitude": "4.61263889",
+          "longitude": "-74.07050000",
+          "stateCode": "DC",
+          "countryCode": "CO"
+        },
+        "name": "Misty Sloan",
+        "state": {
+          "name": "Bogotá D.C.",
+          "isoCode": "DC",
+          "latitude": "4.28204150",
+          "longitude": "-74.50270420",
+          "countryCode": "CO"
+        },
+        "country": {
+          "flag": "🇨🇴",
+          "name": "Colombia",
+          "isoCode": "CO",
+          "currency": "COP",
+          "latitude": "4.00000000",
+          "longitude": "-72.00000000",
+          "phonecode": "57",
+          "timezones": [
+            {
+              "tzName": "Colombia Time",
+              "zoneName": "America/Bogota",
+              "gmtOffset": -18000,
+              "abbreviation": "COT",
+              "gmtOffsetName": "UTC-05:00"
+            }
+          ]
+        }
       },
-      "createdAt": "2011-11-26T19:08:08.380Z",
-      "updatedAt": "2011-11-27T19:08:08.380Z"
+      "username": "misty23",
+      "createdAt": "2010-03-12T11:32:14.420Z",
+      "updatedAt": "2010-03-13T11:32:14.420Z"
     },
     {
       "id": 8,
-      "email": "marguerite_davenport@ovolo.rich",
+      "email": "carver_gamble@undefined.panerai",
       "profile": {
-        "name": "Marguerite Davenport",
-        "country": "Armenia",
-        "state": "Northern Mariana Islands"
+        "city": {
+          "name": "Bogotá D.C.",
+          "latitude": "4.61263889",
+          "longitude": "-74.07050000",
+          "stateCode": "DC",
+          "countryCode": "CO"
+        },
+        "name": "Carver Gamble",
+        "state": {
+          "name": "Bogotá D.C.",
+          "isoCode": "DC",
+          "latitude": "4.28204150",
+          "longitude": "-74.50270420",
+          "countryCode": "CO"
+        },
+        "country": {
+          "flag": "🇨🇴",
+          "name": "Colombia",
+          "isoCode": "CO",
+          "currency": "COP",
+          "latitude": "4.00000000",
+          "longitude": "-72.00000000",
+          "phonecode": "57",
+          "timezones": [
+            {
+              "tzName": "Colombia Time",
+              "zoneName": "America/Bogota",
+              "gmtOffset": -18000,
+              "abbreviation": "COT",
+              "gmtOffsetName": "UTC-05:00"
+            }
+          ]
+        }
       },
-      "createdAt": "2012-07-25T09:45:13.305Z",
-      "updatedAt": "2012-07-26T09:45:13.305Z"
+      "username": "carver23",
+      "createdAt": "2012-11-22T08:54:07.061Z",
+      "updatedAt": "2012-11-23T08:54:07.061Z"
     },
     {
       "id": 9,
-      "email": "tracey_rasmussen@fiberox.ws",
-      "profile": {
-        "name": "Tracey Rasmussen",
-        "country": "United States",
-        "state": "Massachusetts"
-      },
-      "createdAt": "2014-12-20T09:35:49.731Z",
-      "updatedAt": "2014-12-21T09:35:49.731Z"
-    },
-    {
-      "id": 10,
-      "email": "baird_welch@twiist.er",
-      "profile": {
-        "name": "Baird Welch",
-        "country": "Armenia",
-        "state": "Rhode Island"
-      },
-      "createdAt": "2014-06-12T06:13:06.151Z",
-      "updatedAt": "2014-06-13T06:13:06.151Z"
-    },
-    {
-      "id": 11,
-      "email": "hallie_hurley@optyk.nexus",
-      "profile": {
-        "name": "Hallie Hurley",
-        "country": "Falkland Islands (Malvinas)",
-        "state": "Nevada"
-      },
-      "createdAt": "2012-03-04T15:52:39.363Z",
-      "updatedAt": "2012-03-05T15:52:39.363Z"
-    },
-    {
-      "id": 12,
-      "email": "mason_coleman@geostele.onl",
-      "profile": {
-        "name": "Mason Coleman",
-        "country": "Comoros",
-        "state": "Tennessee"
-      },
-      "createdAt": "2011-09-02T05:57:01.712Z",
-      "updatedAt": "2011-09-03T05:57:01.712Z"
-    },
-    {
-      "id": 13,
-      "email": "roxie_sampson@supportal.aw",
-      "profile": {
-        "name": "Roxie Sampson",
-        "country": "Vanuatu",
-        "state": "Nebraska"
-      },
-      "createdAt": "2012-03-21T01:17:23.304Z",
-      "updatedAt": "2012-03-22T01:17:23.304Z"
-    },
-    {
-      "id": 14,
-      "email": "higgins_hobbs@xylar.sener",
-      "profile": {
-        "name": "Higgins Hobbs",
-        "country": "Cape Verde",
-        "state": "New Mexico"
-      },
-      "createdAt": "2011-03-21T18:50:41.031Z",
-      "updatedAt": "2011-03-22T18:50:41.031Z"
-    },
-    {
-      "id": 15,
-      "email": "rocha_stephens@conferia.sy",
-      "profile": {
-        "name": "Rocha Stephens",
-        "country": "Armenia",
-        "state": "Marshall Islands"
-      },
-      "createdAt": "2010-06-03T14:44:24.300Z",
-      "updatedAt": "2010-06-04T14:44:24.300Z"
-    },
-    {
-      "id": 16,
-      "email": "clare_mccullough@cytrek.xin",
-      "profile": {
-        "name": "Clare Mccullough",
-        "country": "United States",
-        "state": "Virginia"
-      },
-      "createdAt": "2012-05-22T22:00:21.373Z",
-      "updatedAt": "2012-05-23T22:00:21.373Z"
-    },
-    {
-      "id": 17,
-      "email": "kim_vargas@zillacom.sexy",
-      "profile": {
-        "name": "Kim Vargas",
-        "country": "United States",
-        "state": "Colorado"
-      },
-      "createdAt": "2014-08-26T15:24:50.615Z",
-      "updatedAt": "2014-08-27T15:24:50.615Z"
-    },
-    {
-      "id": 18,
-      "email": "hudson_nichols@quility.koeln",
-      "profile": {
-        "name": "Hudson Nichols",
-        "country": "Burkina Faso",
-        "state": "Delaware"
-      },
-      "createdAt": "2010-09-12T15:53:11.858Z",
-      "updatedAt": "2010-09-13T15:53:11.858Z"
-    },
-    {
-      "id": 19,
-      "email": "rachel_mann@bedlam.marketing",
-      "profile": {
-        "name": "Rachel Mann",
-        "country": "Albania",
-        "state": "North Carolina"
-      },
-      "createdAt": "2013-08-05T20:57:24.797Z",
-      "updatedAt": "2013-08-06T20:57:24.797Z"
-    },
-    {
-      "id": 20,
-      "email": "rowe_browning@circum.cfd",
-      "profile": {
-        "name": "Rowe Browning",
-        "country": "Tajikistan",
-        "state": "Washington"
-      },
-      "createdAt": "2014-08-30T13:29:02.397Z",
-      "updatedAt": "2014-08-31T13:29:02.397Z"
-    },
-    {
-      "id": 21,
-      "email": "elvia_boyer@billmed.ru",
-      "profile": {
-        "name": "Elvia Boyer",
-        "country": "Armenia",
-        "state": "Wyoming"
-      },
-      "createdAt": "2014-04-25T08:39:09.637Z",
-      "updatedAt": "2014-04-26T08:39:09.637Z"
-    },
-    {
-      "id": 22,
-      "email": "james_garcia@qaboos.bb",
-      "profile": {
-        "name": "James Garcia",
-        "country": "Armenia",
-        "state": "Alaska"
-      },
-      "createdAt": "2010-05-15T18:45:44.811Z",
-      "updatedAt": "2010-05-16T18:45:44.811Z"
-    },
-    {
-      "id": 23,
-      "email": "hale_bradshaw@interfind.xyz",
-      "profile": {
-        "name": "Hale Bradshaw",
-        "country": "United States",
-        "state": "Hawaii"
-      },
-      "createdAt": "2014-01-31T20:41:35.860Z",
-      "updatedAt": "2014-02-01T20:41:35.860Z"
-    },
-    {
-      "id": 24,
-      "email": "hubbard_hamilton@digirang.ooo",
-      "profile": {
-        "name": "Hubbard Hamilton",
-        "country": "Armenia",
-        "state": "Maine"
-      },
-      "createdAt": "2012-02-17T10:41:46.616Z",
-      "updatedAt": "2012-02-18T10:41:46.616Z"
-    },
-    {
-      "id": 25,
-      "email": "constance_cervantes@futurity.bbva",
-      "profile": {
-        "name": "Constance Cervantes",
-        "country": "China",
-        "state": "New York"
-      },
-      "createdAt": "2010-12-30T10:40:36.605Z",
-      "updatedAt": "2010-12-31T10:40:36.605Z"
-    },
-    {
-      "id": 26,
-      "email": "kirsten_foley@keeg.army",
-      "profile": {
-        "name": "Kirsten Foley",
-        "country": "United States",
-        "state": "Florida"
-      },
-      "createdAt": "2014-11-27T08:17:36.397Z",
-      "updatedAt": "2014-11-28T08:17:36.397Z"
-    },
-    {
-      "id": 27,
-      "email": "shelby_cash@quizka.lotto",
-      "profile": {
-        "name": "Shelby Cash",
-        "country": "Armenia",
-        "state": "Illinois"
-      },
-      "createdAt": "2010-05-04T19:37:11.567Z",
-      "updatedAt": "2010-05-05T19:37:11.567Z"
-    },
-    {
-      "id": 28,
-      "email": "pavel@kuzyak.in",
-      "profile": {
-        "name": "Pavel Kuzyakin",
-        "country": "Armenia",
-        "state": "Yerevan"
-      },
-      "createdAt": "2010-05-04T19:37:11.567Z",
-      "updatedAt": "2010-05-05T19:37:11.567Z"
-    },
-    {
-      "id": 29,
-      "email": "pavel@kuzyak.in",
-      "profile": {
-        "name": "Pavel Kuzyakin",
-        "country": "Россия",
-        "state": "Moscow"
-      },
-      "createdAt": "2023-11-05T19:45:42.158Z",
-      "updatedAt": "2023-11-05T19:45:42.158Z"
-    },
-    {
-      "id": 30,
       "email": "iposho@gmail.com",
       "profile": {
-        "name": "Pavel Kuzyakin",
-        "country": "Россия",
-        "state": "Moscow"
+        "name": "Павел Евгеньевич Кузякин",
+        "country": {
+          "name": "United States",
+          "isoCode": "US",
+          "flag": "🇺🇸",
+          "phonecode": "1",
+          "currency": "USD",
+          "latitude": "38.00000000",
+          "longitude": "-97.00000000",
+          "timezones": [
+            {
+              "zoneName": "America/Adak",
+              "gmtOffset": -36000,
+              "gmtOffsetName": "UTC-10:00",
+              "abbreviation": "HST",
+              "tzName": "Hawaii–Aleutian Standard Time"
+            },
+            {
+              "zoneName": "America/Anchorage",
+              "gmtOffset": -32400,
+              "gmtOffsetName": "UTC-09:00",
+              "abbreviation": "AKST",
+              "tzName": "Alaska Standard Time"
+            },
+            {
+              "zoneName": "America/Boise",
+              "gmtOffset": -25200,
+              "gmtOffsetName": "UTC-07:00",
+              "abbreviation": "MST",
+              "tzName": "Mountain Standard Time (North America"
+            },
+            {
+              "zoneName": "America/Chicago",
+              "gmtOffset": -21600,
+              "gmtOffsetName": "UTC-06:00",
+              "abbreviation": "CST",
+              "tzName": "Central Standard Time (North America"
+            },
+            {
+              "zoneName": "America/Denver",
+              "gmtOffset": -25200,
+              "gmtOffsetName": "UTC-07:00",
+              "abbreviation": "MST",
+              "tzName": "Mountain Standard Time (North America"
+            },
+            {
+              "zoneName": "America/Detroit",
+              "gmtOffset": -18000,
+              "gmtOffsetName": "UTC-05:00",
+              "abbreviation": "EST",
+              "tzName": "Eastern Standard Time (North America"
+            },
+            {
+              "zoneName": "America/Indiana/Indianapolis",
+              "gmtOffset": -18000,
+              "gmtOffsetName": "UTC-05:00",
+              "abbreviation": "EST",
+              "tzName": "Eastern Standard Time (North America"
+            },
+            {
+              "zoneName": "America/Indiana/Knox",
+              "gmtOffset": -21600,
+              "gmtOffsetName": "UTC-06:00",
+              "abbreviation": "CST",
+              "tzName": "Central Standard Time (North America"
+            },
+            {
+              "zoneName": "America/Indiana/Marengo",
+              "gmtOffset": -18000,
+              "gmtOffsetName": "UTC-05:00",
+              "abbreviation": "EST",
+              "tzName": "Eastern Standard Time (North America"
+            },
+            {
+              "zoneName": "America/Indiana/Petersburg",
+              "gmtOffset": -18000,
+              "gmtOffsetName": "UTC-05:00",
+              "abbreviation": "EST",
+              "tzName": "Eastern Standard Time (North America"
+            },
+            {
+              "zoneName": "America/Indiana/Tell_City",
+              "gmtOffset": -21600,
+              "gmtOffsetName": "UTC-06:00",
+              "abbreviation": "CST",
+              "tzName": "Central Standard Time (North America"
+            },
+            {
+              "zoneName": "America/Indiana/Vevay",
+              "gmtOffset": -18000,
+              "gmtOffsetName": "UTC-05:00",
+              "abbreviation": "EST",
+              "tzName": "Eastern Standard Time (North America"
+            },
+            {
+              "zoneName": "America/Indiana/Vincennes",
+              "gmtOffset": -18000,
+              "gmtOffsetName": "UTC-05:00",
+              "abbreviation": "EST",
+              "tzName": "Eastern Standard Time (North America"
+            },
+            {
+              "zoneName": "America/Indiana/Winamac",
+              "gmtOffset": -18000,
+              "gmtOffsetName": "UTC-05:00",
+              "abbreviation": "EST",
+              "tzName": "Eastern Standard Time (North America"
+            },
+            {
+              "zoneName": "America/Juneau",
+              "gmtOffset": -32400,
+              "gmtOffsetName": "UTC-09:00",
+              "abbreviation": "AKST",
+              "tzName": "Alaska Standard Time"
+            },
+            {
+              "zoneName": "America/Kentucky/Louisville",
+              "gmtOffset": -18000,
+              "gmtOffsetName": "UTC-05:00",
+              "abbreviation": "EST",
+              "tzName": "Eastern Standard Time (North America"
+            },
+            {
+              "zoneName": "America/Kentucky/Monticello",
+              "gmtOffset": -18000,
+              "gmtOffsetName": "UTC-05:00",
+              "abbreviation": "EST",
+              "tzName": "Eastern Standard Time (North America"
+            },
+            {
+              "zoneName": "America/Los_Angeles",
+              "gmtOffset": -28800,
+              "gmtOffsetName": "UTC-08:00",
+              "abbreviation": "PST",
+              "tzName": "Pacific Standard Time (North America"
+            },
+            {
+              "zoneName": "America/Menominee",
+              "gmtOffset": -21600,
+              "gmtOffsetName": "UTC-06:00",
+              "abbreviation": "CST",
+              "tzName": "Central Standard Time (North America"
+            },
+            {
+              "zoneName": "America/Metlakatla",
+              "gmtOffset": -32400,
+              "gmtOffsetName": "UTC-09:00",
+              "abbreviation": "AKST",
+              "tzName": "Alaska Standard Time"
+            },
+            {
+              "zoneName": "America/New_York",
+              "gmtOffset": -18000,
+              "gmtOffsetName": "UTC-05:00",
+              "abbreviation": "EST",
+              "tzName": "Eastern Standard Time (North America"
+            },
+            {
+              "zoneName": "America/Nome",
+              "gmtOffset": -32400,
+              "gmtOffsetName": "UTC-09:00",
+              "abbreviation": "AKST",
+              "tzName": "Alaska Standard Time"
+            },
+            {
+              "zoneName": "America/North_Dakota/Beulah",
+              "gmtOffset": -21600,
+              "gmtOffsetName": "UTC-06:00",
+              "abbreviation": "CST",
+              "tzName": "Central Standard Time (North America"
+            },
+            {
+              "zoneName": "America/North_Dakota/Center",
+              "gmtOffset": -21600,
+              "gmtOffsetName": "UTC-06:00",
+              "abbreviation": "CST",
+              "tzName": "Central Standard Time (North America"
+            },
+            {
+              "zoneName": "America/North_Dakota/New_Salem",
+              "gmtOffset": -21600,
+              "gmtOffsetName": "UTC-06:00",
+              "abbreviation": "CST",
+              "tzName": "Central Standard Time (North America"
+            },
+            {
+              "zoneName": "America/Phoenix",
+              "gmtOffset": -25200,
+              "gmtOffsetName": "UTC-07:00",
+              "abbreviation": "MST",
+              "tzName": "Mountain Standard Time (North America"
+            },
+            {
+              "zoneName": "America/Sitka",
+              "gmtOffset": -32400,
+              "gmtOffsetName": "UTC-09:00",
+              "abbreviation": "AKST",
+              "tzName": "Alaska Standard Time"
+            },
+            {
+              "zoneName": "America/Yakutat",
+              "gmtOffset": -32400,
+              "gmtOffsetName": "UTC-09:00",
+              "abbreviation": "AKST",
+              "tzName": "Alaska Standard Time"
+            },
+            {
+              "zoneName": "Pacific/Honolulu",
+              "gmtOffset": -36000,
+              "gmtOffsetName": "UTC-10:00",
+              "abbreviation": "HST",
+              "tzName": "Hawaii–Aleutian Standard Time"
+            }
+          ]
+        },
+        "state": {
+          "name": "Alabama",
+          "isoCode": "AL",
+          "countryCode": "US",
+          "latitude": "32.31823140",
+          "longitude": "-86.90229800"
+        },
+        "city": {
+          "name": "Arab",
+          "countryCode": "US",
+          "stateCode": "AL",
+          "latitude": "34.31815000",
+          "longitude": "-86.49582000"
+        }
       },
-      "createdAt": "2023-11-05T20:39:38.856Z",
-      "updatedAt": "2023-11-05T20:39:38.856Z"
+      "createdAt": "2023-11-06T19:44:37.098Z",
+      "updatedAt": "2023-11-06T19:44:37.098Z"
     }
   ]
 }

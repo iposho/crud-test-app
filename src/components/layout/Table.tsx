@@ -1,127 +1,84 @@
-import { useState } from 'react';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
+import { Records } from '../../models/models.ts';
 
-import {
-  createColumnHelper,
-  flexRender,
-  getCoreRowModel,
-  getSortedRowModel,
-  useReactTable,
-  SortingFn,
-  SortingState
-} from '@tanstack/react-table'
-
-import { IRecord, Records } from '../../models/models.ts';
-
-const columnHelper = createColumnHelper<IRecord>()
-
-const countrySort: SortingFn<any> = (rowA, rowB) => {
-  const countryA:string = rowA.getValue('profile_country');
-  const countryB:string = rowB.getValue('profile_country');
-  const regionA:string = rowA.getValue('profile_state');
-  const regionB:string = rowB.getValue('profile_country');
-
-  if (countryA === countryB) {
-    return regionA.localeCompare(regionB);
-  }
-
-  return countryA.localeCompare(countryB);
+interface TableProps {
+  data: Records;
 }
 
-const columns= [
-  columnHelper.accessor('id', {
-    header: () => 'ID',
-    cell: info => info.getValue(),
-    footer: info => info.column.id,
-  }),
-  columnHelper.accessor('email', {
-    header: () => 'Email',
-    cell: info => info.getValue(),
-    footer: info => info.column.id,
-  }),
-  columnHelper.accessor('profile.name', {
-    header: () => 'Name',
-    cell: info => info.getValue(),
-    footer: info => info.column.id,
-  }),
-  columnHelper.accessor('profile.country', {
-    header: () => 'Country',
-    cell: info => info.getValue(),
-    footer: info => info.column.id,
-    sortingFn: countrySort,
-  }),
-  columnHelper.accessor('profile.state', {
-    header: () => 'State',
-    cell: info => info.getValue(),
-    footer: info => info.column.id,
-    sortingFn: countrySort,
-  }),
-]
+const columns: GridColDef[] = [
+  { field: 'id', headerName: 'ID', width: 70 },
+  { field: 'email', headerName: 'Email', width: 250, flex: .5 },
+  {
+    field: 'name',
+    headerName: 'Name',
+    width: 200,
+    flex: .5,
+    valueGetter: (params) => params.row.profile.name
+  },
+  {
+    field: 'country',
+    headerName: 'Country',
+    width: 130,
+    flex: .5,
+    valueGetter: (params) => params.row.profile.country.name
+  },
+  {
+    field: 'state',
+    headerName: 'State',
+    width: 130,
+    flex: .5,
+    valueGetter: (params) => params.row.profile.state.name
+  },
+  {
+    field: 'city',
+    headerName: 'City',
+    width: 130,
+    flex: .5,
+    valueGetter: (params) => params.row.profile.city.name
+  },
+  {
+    field: 'Edit Link',
+    headerName: '',
+    width: 80,
+    renderCell: (params) => (
+      <Link to={`/records/${params.row.id}`}>
+        <Button variant="contained">Edit</Button>
+      </Link>
+    ),
+  },
+  {
+    field: 'Delete Link',
+    headerName: '',
+    width: 100,
+    renderCell: (params) => (
+      <Link to={`/records/${params.row.id}`}>
+        <Button
+          variant="contained"
+          sx={{ backgroundColor: 'red' }}
+        >
+          Delete
+        </Button>
+      </Link>
+    ),
+  },
+];
 
 
-
-function Table(data: Records) {
-  const [sorting, setSorting] = useState<SortingState>([])
-
-  const table = useReactTable({
-    ...data,
-    columns: columns,
-    state: {
-      sorting,
-    },
-    onSortingChange: setSorting,
-    getCoreRowModel: getCoreRowModel(),
-    getSortedRowModel: getSortedRowModel(),
-    debugTable: true,
-  })
-
+export default function Table({ data }: TableProps) {
   return (
-    <div className="p-2">
-      <table>
-        <thead>
-          {table.getHeaderGroups().map(headerGroup => (
-            <tr key={headerGroup.id}>
-              {headerGroup.headers.map(header => {
-                return (
-                  <th key={header.id} colSpan={header.colSpan}>
-                    {header.isPlaceholder ? null : (
-                      <div
-                        {...{
-                          className: header.column.getCanSort()
-                            ? 'cursor-pointer select-none'
-                            : '',
-                          onClick: header.column.getToggleSortingHandler(),
-                        }}
-                      >
-                        {flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                        {{
-                          asc: ' 🔼',
-                          desc: ' 🔽',
-                        }[header.column.getIsSorted() as string] ?? null}
-                      </div>
-                    )}
-                  </th>
-                )
-              })}
-            </tr>
-          ))}
-        </thead>
-        <tbody>
-          {table.getRowModel().rows.map(row => (
-            <tr key={row.id}>
-              {row.getVisibleCells().map(cell => (
-                <td key={cell.id}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div style={{ width: '100%' }}>
+      <DataGrid
+        rows={data}
+        columns={columns}
+        loading={!data}
+        initialState={{
+          sorting: {
+            sortModel: [{ field: 'id', sort: 'desc' }],
+          },
+        }}
+      />
     </div>
-  )
+  );
 }
-
-export default Table
