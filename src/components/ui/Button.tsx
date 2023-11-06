@@ -2,6 +2,7 @@ import React from 'react';
 import MUIButton from '@mui/material/Button';
 
 interface ButtonProps {
+  disabled?: boolean;
   type: 'submit' | 'button' | 'reset';
   onClick: () => void;
   children?: React.ReactNode;
@@ -11,6 +12,7 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({
+  disabled = false,
   type = 'button',
   onClick,
   variant = 'contained',
@@ -25,6 +27,7 @@ const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
       sx={sx}
       color={color}
+      disabled={disabled}
     >
       {children}
     </MUIButton>

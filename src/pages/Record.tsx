@@ -5,9 +5,7 @@ import {
 } from '../store/api/server.api.ts';
 
 import { ICountry, IState, ICity } from 'country-state-city'
-
-import Input from '../components/ui/Input.tsx';
-import Button from '../components/ui/Button.tsx';
+import { IRecord } from '../models/models.ts';
 
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -17,10 +15,8 @@ import Box from '@mui/material/Box';
 import useCreateOrUpdateRecord from '../hooks/useCreateOrUpdateRecord.ts';
 import useDeleteRecord from '../hooks/useDeleteRecord.ts';
 
-import { IRecord } from '../models/models.ts';
-import ComboBox from '../components/ui/ComboBox.tsx';
-
 import initialData from '../constants/recordInitialData.ts';
+import RecordForm from '../components/containers/RecordForm.tsx';
 
 export default function Record() {
   const { id } = useParams();
@@ -76,24 +72,54 @@ export default function Record() {
   };
 
   const handleCreate = async () => {
-    if (selectedCountry && selectedState && selectedCity) {
-      await createRecord({
+    if (selectedCountry && selectedState) {
+      const updatedProfile = {
+        country: selectedCountry,
+        state: selectedState,
+        city: selectedCity || null,
+      };
+
+      if (selectedCity) {
+        updatedProfile.city = selectedCity;
+      }
+
+      const updatedFormData = {
         ...formData,
         profile: {
           ...formData.profile,
-          country: selectedCountry,
-          state: selectedState,
-          city: selectedCity,
-        }
-      });
+          ...updatedProfile,
+        },
+      };
+
+      await createRecord(updatedFormData);
     }
   };
 
   const handleUpdate = async () => {
-    if (id) {
-      await updateRecord(id, formData);
+
+    if (id && selectedCountry && selectedState) {
+      const updatedProfile = {
+        country: selectedCountry,
+        state: selectedState,
+        city: selectedCity || null,
+      };
+
+      if (selectedCity) {
+        updatedProfile.city = selectedCity;
+      }
+
+      const updatedFormData = {
+        ...formData,
+        profile: {
+          ...formData.profile,
+          ...updatedProfile,
+        },
+      };
+
+      await updateRecord(id, updatedFormData);
     }
   };
+
 
   const handleDelete = async () => {
     if (id) {
@@ -108,65 +134,20 @@ export default function Record() {
         {isLoading ? (
           <CircularProgress color="secondary" />
         ) : (
-          <div>
-            <Typography
-              variant="h4"
-              sx={{
-                margin: '1rem 0 1.5rem 0'
-              }}
-            >
-              {!isEditing ? 'Create new record' : 'Edit record id:' + formData.id}
-            </Typography>
-            <Input
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              label="Email"
-            />
-            <Input
-              name="profile.name"
-              value={formData.profile.name}
-              onChange={handleInputChange}
-              label="Name"
-              sx={{ marginBottom: '1rem' }}
-            />
-            <ComboBox
-              selectedCountry={selectedCountry}
-              setSelectedCountry={setSelectedCountry}
-              selectedState={selectedState}
-              setSelectedState={setSelectedState}
-              selectedCity={selectedCity}
-              setSelectedCity={setSelectedCity}
-            />
-            <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-              {
-                isEditing
-                  ? <>
-                    <Button
-                      type="submit"
-                      onClick={handleUpdate}
-                    >
-                      Update
-                    </Button>
-                    <Button
-                      type="button"
-                      onClick={handleDelete}
-                      sx={{
-                        backgroundColor: 'red'
-                      }}
-                    >
-                      Delete
-                    </Button>
-                  </>
-                  : <Button
-                    type="button"
-                    onClick={handleCreate}
-                  >
-                    Create
-                  </Button>
-              }
-            </Box>
-          </div>
+          <RecordForm
+            isEditing={isEditing}
+            formData={formData}
+            selectedCountry={selectedCountry}
+            setSelectedCountry={setSelectedCountry}
+            selectedState={selectedState}
+            setSelectedState={setSelectedState}
+            selectedCity={selectedCity}
+            setSelectedCity={setSelectedCity}
+            onInputChange={handleInputChange}
+            onCreate={handleCreate}
+            onUpdate={handleUpdate}
+            onDelete={handleDelete}
+          />
         )}
       </Box>
     </Container>

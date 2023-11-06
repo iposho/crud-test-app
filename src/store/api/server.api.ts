@@ -33,7 +33,7 @@ export const serverApi = createApi({
     updateRecord: build.mutation<IUpdateRecordResponse, IUpdateRecordRequest>({
       query: (updates) => ({
         url: `records/${updates.id}`,
-        method: 'PUT',
+        method: 'PATCH',
         body: updates.data,
       }),
     }),

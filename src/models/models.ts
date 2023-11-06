@@ -21,13 +21,13 @@ export interface IRecord {
   updatedAt: string
 }
 export interface IProfile {
-  city: City
+  city?: ICity | null;
   name: string
-  state: State
-  country: Country
+  state: IState
+  country: ICountry
 }
 
-export interface City {
+export interface ICity {
   name: string
   latitude?: string | null | undefined;
   longitude?: string | null | undefined;
@@ -35,7 +35,7 @@ export interface City {
   countryCode: string
 }
 
-export interface State {
+export interface IState {
   name: string
   isoCode: string
   latitude?: string | null | undefined;
@@ -43,7 +43,7 @@ export interface State {
   countryCode: string
 }
 
-export interface Country {
+export interface ICountry {
   flag: string
   name: string
   isoCode: string
@@ -51,10 +51,10 @@ export interface Country {
   latitude?: string | null | undefined;
   longitude?: string | null | undefined;
   phonecode: string
-  timezones?: Timezone[] | undefined
+  timezones?: ITimezone[] | undefined
 }
 
-export interface Timezone {
+export interface ITimezone {
   tzName: string
   zoneName: string
   gmtOffset: number

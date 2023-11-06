@@ -29,10 +29,17 @@ const useCreateOrUpdateRecord = (): CreateOrUpdateRecordData => {
   };
 
   const updateRecord = async (id: string, formData: IRecord) => {
+    console.log(formData);
+
+    const recordData = {
+      ...formData,
+      updatedAt: new Date(),
+    };
+
     try {
       const response = await updateRecordMutation({
         id,
-        data: formData,
+        data: recordData,
       });
 
       if ('error' in response) {
