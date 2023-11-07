@@ -4,7 +4,7 @@ export interface ICreateRecordRequest {
   data: object;
 }
 export interface IUpdateRecordRequest {
-  id: string;
+  id: number;
   data: object;
 }
 
@@ -14,14 +14,14 @@ export interface IUpdateRecordResponse {
 }
 
 export interface IRecord {
-  id: string
+  id: number
   email: string
   profile: IProfile
   createdAt: string
   updatedAt: string
 }
 export interface IProfile {
-  city?: ICity | null;
+  city?: ICity | null
   name: string
   state: IState
   country: ICountry

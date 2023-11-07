@@ -3,8 +3,8 @@ import MUIButton from '@mui/material/Button';
 
 interface ButtonProps {
   disabled?: boolean;
-  type: 'submit' | 'button' | 'reset';
-  onClick: () => void;
+  type?: 'submit' | 'button' | 'reset';
+  onClick?: () => void;
   children?: React.ReactNode;
   variant?: 'contained' | 'outlined' | 'text';
   sx?: object;

@@ -12,6 +12,8 @@ import Typography from '@mui/material/Typography';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 
+import Modal from '../components/ui/Modal.tsx'
+
 import useCreateOrUpdateRecord from '../hooks/useCreateOrUpdateRecord.ts';
 import useDeleteRecord from '../hooks/useDeleteRecord.ts';
 
@@ -20,6 +22,7 @@ import RecordForm from '../components/containers/RecordForm.tsx';
 
 export default function Record() {
   const { id } = useParams();
+  const numericId = Number(id);
 
   const isEditing = !!id;
 
@@ -34,6 +37,10 @@ export default function Record() {
   const [selectedCountry, setSelectedCountry] = useState<ICountry | null>(null);
   const [selectedState, setSelectedState] = useState<IState | null>(null);
   const [selectedCity, setSelectedCity] = useState<ICity | null>(null);
+  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+  const [inputChanges, setInputChanges] = useState({});
+  const [newRecordId, setNewRecordId]=useState(null)
 
   useEffect(() => {
     if (data && Array.isArray(data) && isEditing) {
@@ -53,6 +60,8 @@ export default function Record() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
+
+    setInputChanges({ ...inputChanges, [name]: value });
 
     if (name.includes('profile.')) {
       const profileName = name.split('profile.')[1];
@@ -91,7 +100,16 @@ export default function Record() {
         },
       };
 
-      await createRecord(updatedFormData);
+      const response = await createRecord(updatedFormData);
+
+      if (response && 'error' in response) {
+        console.error('Error when creating record', response.error);
+      } else {
+        setIsSuccessModalOpen(true);
+        setSuccessMessage('Record successfully created');
+        setNewRecordId(response.data.id)
+        console.log('Record successfully created', response.data);
+      }
     }
   };
 
@@ -116,14 +134,22 @@ export default function Record() {
         },
       };
 
-      await updateRecord(id, updatedFormData);
+      const response = await updateRecord(numericId, updatedFormData);
+
+      if (response && 'error' in response) {
+        console.error('Error during record update', response.error);
+      } else {
+        setIsSuccessModalOpen(true);
+        setSuccessMessage('Record has been successfully updated');
+        console.log('Record has been successfully updated', response.data);
+      }
     }
   };
 
 
   const handleDelete = async () => {
     if (id) {
-      await deleteRecord(id);
+      await deleteRecord(numericId);
     }
   };
 
@@ -147,9 +173,17 @@ export default function Record() {
             onCreate={handleCreate}
             onUpdate={handleUpdate}
             onDelete={handleDelete}
+            inputChanges={inputChanges}
           />
         )}
       </Box>
+      <Modal
+        open={isSuccessModalOpen}
+        onClose={() => setIsSuccessModalOpen(false)}
+        message={successMessage}
+        id={numericId || newRecordId}
+        isEditing={isEditing}
+      />
     </Container>
   )
 }

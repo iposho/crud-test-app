@@ -6,3 +6,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.highLigthedRow {
+  background-color: deepskyblue;
+  color: #fff;
+}

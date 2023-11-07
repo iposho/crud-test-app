@@ -28,11 +28,13 @@ interface RecordFormProps {
   onCreate: () => void;
   onUpdate: () => void;
   onDelete: () => void;
+  inputChanges: object;
 }
 
 export default function RecordForm({
   isEditing,
   formData,
+  inputChanges,
   selectedCountry,
   setSelectedCountry,
   selectedState,
@@ -46,7 +48,7 @@ export default function RecordForm({
 }: RecordFormProps) {
   const [radioButtonValue, setRadioButtonValue] = useState('');
 
-  const [checkBoxState, setCheckBoxState] = React.useState({
+  const [checkBoxState, setCheckBoxState] = useState({
     accept: false,
     updates: false,
   });
@@ -76,16 +78,17 @@ export default function RecordForm({
         {!isEditing ? 'Create new record' : `Edit record id: ${formData.id}`}
       </Typography>
       <Input
-        name="email"
-        value={formData.email}
-        onChange={onInputChange}
-        label="Email"
-      />
-      <Input
         name="profile.name"
         value={formData.profile.name}
         onChange={onInputChange}
         label="Name"
+        sx={{ marginBottom: '1rem' }}
+      />
+      <Input
+        name="email"
+        value={formData.email}
+        onChange={onInputChange}
+        label="Email"
         sx={{ marginBottom: '1rem' }}
       />
       <ComboBox
@@ -158,7 +161,10 @@ export default function RecordForm({
         {isEditing ? (
           <>
             <Button
-              disabled={isButtonDisabled}
+              disabled={
+                (!isEditing && isButtonDisabled) ||
+                (isEditing && Object.keys(inputChanges).length === 0)
+              }
               type="submit"
               onClick={onUpdate}
             >

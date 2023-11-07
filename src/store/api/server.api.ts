@@ -37,8 +37,8 @@ export const serverApi = createApi({
         body: updates.data,
       }),
     }),
-    deleteRecord: build.mutation<void, string>({
-      query: (id) => ({
+    deleteRecord: build.mutation<void, number>({
+      query: (id: number) => ({
         url: `records/${id}`, // Путь для удаления записи
         method: 'DELETE', // Метод HTTP для удаления
       }),

@@ -1,13 +1,13 @@
 import { useDeleteRecordMutation } from '../store/api/server.api.ts';
 
 type DeleteRecordData = {
-  deleteRecord: (id: string) => Promise<void>;
+  deleteRecord: (id: number) => Promise<void>;
 };
 
 const useDeleteRecord = (): DeleteRecordData => {
   const [deleteRecordMutation] = useDeleteRecordMutation();
 
-  const deleteRecord = async (id: string) => {
+  const deleteRecord = async (id: number) => {
     if (id) {
       try {
         const response = await deleteRecordMutation(id);

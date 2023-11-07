@@ -48,7 +48,7 @@ export default function Navigation(props: NavigationMUIProps) {
       <List>
         <ListItem disablePadding>
           <ListItemButton sx={{ textAlign: 'center' }}>
-            <ListItemText primary="Add record" />
+            <ListItemText primary="Create new record" />
           </ListItemButton>
         </ListItem>
       </List>

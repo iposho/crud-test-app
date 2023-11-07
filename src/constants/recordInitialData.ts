@@ -1,5 +1,5 @@
 const initialData = {
-  id: '',
+  id: NaN,
   email: '',
   profile: {
     name: '',

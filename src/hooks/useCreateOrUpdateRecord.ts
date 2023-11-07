@@ -2,8 +2,8 @@ import { useCreateRecordMutation, useUpdateRecordMutation } from '../store/api/s
 import { IRecord } from '../models/models.ts';
 
 type CreateOrUpdateRecordData = {
-  createRecord: (formData: IRecord) => Promise<void>;
-  updateRecord: (id: string, formData: IRecord) => Promise<void>;
+  createRecord: (formData: IRecord) => Promise<any>;
+  updateRecord: (id: number, formData: IRecord) => Promise<any>;
 };
 
 const useCreateOrUpdateRecord = (): CreateOrUpdateRecordData => {
@@ -17,39 +17,21 @@ const useCreateOrUpdateRecord = (): CreateOrUpdateRecordData => {
       updatedAt: new Date(),
     };
 
-    const response = await createRecordMutation({
+    return await createRecordMutation({
       data: recordData,
     });
-
-    if ('error' in response) {
-      console.error('Ошибка при создании записи', response.error);
-    } else {
-      console.log('Запись успешно создана', response.data);
-    }
   };
 
-  const updateRecord = async (id: string, formData: IRecord) => {
-    console.log(formData);
-
+  const updateRecord = async (id: number, formData: IRecord) => {
     const recordData = {
       ...formData,
       updatedAt: new Date(),
     };
 
-    try {
-      const response = await updateRecordMutation({
-        id,
-        data: recordData,
-      });
-
-      if ('error' in response) {
-        console.error('Ошибка при обновлении записи', response.error);
-      } else {
-        console.log('Запись успешно обновлена', response.data);
-      }
-    } catch (error) {
-      console.error('Ошибка при отправке запроса', error);
-    }
+    return await updateRecordMutation({
+      id,
+      data: recordData,
+    });
   };
 
   return { createRecord, updateRecord };
