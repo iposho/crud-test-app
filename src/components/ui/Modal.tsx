@@ -27,11 +27,24 @@ interface ModalProps {
   isDeleting?: boolean;
   onClose: () => void;
   onDelete?: () => void;
+  onDeleteButtonClick?: () => void;
   message?: string;
   id: number | null;
+  isButtonsHide?: boolean;
 }
 
-export default function Modal({ onClose, open, message, id, isDeleting, onDelete }:ModalProps) {
+export default function Modal(
+  {
+    onClose,
+    open,
+    message,
+    id,
+    isButtonsHide,
+    isDeleting,
+    onDelete,
+    onDeleteButtonClick
+  }:ModalProps) {
+
   return (
     <MUIModal
       open={open}
@@ -58,7 +71,7 @@ export default function Modal({ onClose, open, message, id, isDeleting, onDelete
           }}
         >
           {
-            isDeleting && 'Are you sure you want to delete this record?'
+            (!isButtonsHide && isDeleting) && 'Are you sure you want to delete this record?'
           }
           {
             !isDeleting &&
@@ -74,7 +87,7 @@ export default function Modal({ onClose, open, message, id, isDeleting, onDelete
           }
         </Typography>
         {
-          isDeleting &&
+          (!isButtonsHide && isDeleting) &&
           <Box
             sx={{
               justifyContent: 'space-around',
@@ -89,7 +102,7 @@ export default function Modal({ onClose, open, message, id, isDeleting, onDelete
               Cancel
             </Button>
             <Button
-              onClick={onDelete || (() => {})}
+              onClick={onDeleteButtonClick || onDelete}
               color="error"
             >
               Delete

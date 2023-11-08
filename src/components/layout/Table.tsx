@@ -72,22 +72,25 @@ export default function Table({ data, onDeleteRecord, refetch }: TableProps) {
       field: 'country',
       headerName: 'Country',
       width: 130,
-      flex: .5,
-      valueGetter: (params) => params.row.profile.country.name
+      flex: 0.5,
+      valueGetter: (params) => params.row.profile.country.name,
+      sortComparator: (v1, v2) => v1.localeCompare(v2),
     },
     {
       field: 'state',
       headerName: 'State',
       width: 130,
-      flex: .5,
-      valueGetter: (params) => params.row.profile.state.name
+      flex: 0.5,
+      valueGetter: (params) => params.row.profile.state.name,
+      sortComparator: (v1, v2) => v1.localeCompare(v2),
     },
     {
       field: 'city',
       headerName: 'City',
       width: 130,
-      flex: .5,
-      valueGetter: (params) => params.row.profile.city?.name
+      flex: 0.5,
+      valueGetter: (params) => params.row.profile.city?.name,
+      sortComparator: (v1, v2) => v1.localeCompare(v2),
     },
     {
       field: 'updatedAt',
@@ -131,10 +134,8 @@ export default function Table({ data, onDeleteRecord, refetch }: TableProps) {
         }
         columns={columns}
         loading={!data}
-        onRowClick={(params) => {
-          if (params.row.id === highlightedRowId) {
-            setHighlightedRowId(null);
-          }
+        onRowClick={() => {
+          setHighlightedRowId(null);
         }}
         initialState={{
           sorting: {

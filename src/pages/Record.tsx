@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import {
   useGetRecordByIdQuery,
 } from '../store/api/server.api.ts';
@@ -24,6 +24,8 @@ export default function Record() {
   const { id } = useParams();
   const numericId = Number(id);
 
+  const navigate = useNavigate();
+
   const isEditing = !!id;
 
   const { data, isLoading, isError } = useGetRecordByIdQuery(id || '', {
@@ -37,13 +39,17 @@ export default function Record() {
   const [selectedCountry, setSelectedCountry] = useState<ICountry | null>(null);
   const [selectedState, setSelectedState] = useState<IState | null>(null);
   const [selectedCity, setSelectedCity] = useState<ICity | null>(null);
-  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [isModalButtonsHide, setIsModalButtonsHide] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
   const [inputChanges, setInputChanges] = useState({});
   const [newRecordId, setNewRecordId]=useState(null)
 
   useEffect(() => {
-    if (data && Array.isArray(data) && isEditing) {
+    if (Array.isArray(data) && data.length === 0) {
+      navigate('/');
+    } else if (data && Array.isArray(data) && isEditing) {
       const recordData = data[0];
       setFormData(recordData);
       setSelectedCountry(recordData.profile.country);
@@ -55,7 +61,7 @@ export default function Record() {
       setSelectedState(null);
       setSelectedCity(null);
     }
-  }, [data, isEditing]);
+  }, [data, isEditing, navigate]);
 
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -105,10 +111,10 @@ export default function Record() {
       if (response && 'error' in response) {
         console.error('Error when creating record', response.error);
       } else {
-        setIsSuccessModalOpen(true);
-        setSuccessMessage('Record successfully created');
-        setNewRecordId(response.data.id)
-        console.log('Record successfully created', response.data);
+        setIsModalOpen(true);
+        setNewRecordId(response.data.id);
+        setSuccessMessage(`Record with id ${response.data.id} successfully created`);
+        console.log(`Record with id ${response.data.id} successfully created`, response.data);
       }
     }
   };
@@ -139,51 +145,73 @@ export default function Record() {
       if (response && 'error' in response) {
         console.error('Error during record update', response.error);
       } else {
-        setIsSuccessModalOpen(true);
-        setSuccessMessage('Record has been successfully updated');
-        console.log('Record has been successfully updated', response.data);
+        setIsModalOpen(true);
+        setSuccessMessage(`Record with id ${numericId} has been successfully updated`);
+        console.log(`Record with id ${numericId} has been successfully updated`, response.data);
+        navigate('/');
       }
     }
   };
 
+  const handleModalClose = () => {
+    if (isModalButtonsHide) {
+      navigate('/', { state: { id } })
+    }
+    setIsModalOpen(false);
+  }
 
-  const handleDelete = async () => {
+  const handleDelete = () => {
     if (id) {
-      await deleteRecord(numericId);
+      setIsDeleting(true);
+      setSuccessMessage(`Deleting record with id ${id}`)
+      setIsModalOpen(true);
     }
   };
 
+  const handleDeleteButtonClick = async () => {
+    if (id) {
+      await deleteRecord(numericId);
+      setSuccessMessage(`Record with id ${numericId} has been successfully deleted`);
+      setIsModalButtonsHide(true);
+      console.log(`Record with id ${numericId} has been successfully deleted`);
+    }
+  }
+
   return (
-    <Container sx={{ width: '100%' }}>
-      {isError && <Typography className="text-red">Something went wrong...</Typography>}
-      <Box>
-        {isLoading ? (
-          <CircularProgress color="secondary" />
-        ) : (
-          <RecordForm
-            isEditing={isEditing}
-            formData={formData}
-            selectedCountry={selectedCountry}
-            setSelectedCountry={setSelectedCountry}
-            selectedState={selectedState}
-            setSelectedState={setSelectedState}
-            selectedCity={selectedCity}
-            setSelectedCity={setSelectedCity}
-            onInputChange={handleInputChange}
-            onCreate={handleCreate}
-            onUpdate={handleUpdate}
-            onDelete={handleDelete}
-            inputChanges={inputChanges}
-          />
-        )}
-      </Box>
-      <Modal
-        open={isSuccessModalOpen}
-        onClose={() => setIsSuccessModalOpen(false)}
-        message={successMessage}
-        id={numericId || newRecordId}
-        isEditing={isEditing}
-      />
-    </Container>
+    (Array.isArray(data) && data.length > 0 || !isEditing) &&
+      <Container sx={{ width: '100%' }}>
+        {isError && <Typography className="text-red">Something went wrong...</Typography>}
+        <Box>
+          {isLoading ? (
+            <CircularProgress color="secondary" />
+          ) : (
+            <RecordForm
+              isEditing={isEditing}
+              formData={formData}
+              selectedCountry={selectedCountry}
+              setSelectedCountry={setSelectedCountry}
+              selectedState={selectedState}
+              setSelectedState={setSelectedState}
+              selectedCity={selectedCity}
+              setSelectedCity={setSelectedCity}
+              onInputChange={handleInputChange}
+              onCreate={handleCreate}
+              onUpdate={handleUpdate}
+              onDelete={handleDelete}
+              inputChanges={inputChanges}
+            />
+          )}
+        </Box>
+        <Modal
+          open={isModalOpen}
+          onClose={handleModalClose}
+          message={successMessage}
+          id={numericId || newRecordId}
+          isEditing={isEditing}
+          isDeleting={isDeleting}
+          onDeleteButtonClick={handleDeleteButtonClick}
+          isButtonsHide={isModalButtonsHide}
+        />
+      </Container>
   )
 }

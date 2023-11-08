@@ -1,47 +1,6 @@
 {
   "records": [
     {
-      "id": 1,
-      "email": "cindy_shields@rodemco.bj",
-      "profile": {
-        "name": "Cindy Shields",
-        "country": {
-          "name": "Colombia",
-          "isoCode": "CO",
-          "flag": "🇨🇴",
-          "phonecode": "57",
-          "currency": "COP",
-          "latitude": "4.00000000",
-          "longitude": "-72.00000000",
-          "timezones": [
-            {
-              "zoneName": "America/Bogota",
-              "gmtOffset": -18000,
-              "gmtOffsetName": "UTC-05:00",
-              "abbreviation": "COT",
-              "tzName": "Colombia Time"
-            }
-          ]
-        },
-        "state": {
-          "name": "Bogotá D.C.",
-          "isoCode": "DC",
-          "countryCode": "CO",
-          "latitude": "4.28204150",
-          "longitude": "-74.50270420"
-        },
-        "city": {
-          "name": "Bogotá D.C.",
-          "countryCode": "CO",
-          "stateCode": "DC",
-          "latitude": "4.61263889",
-          "longitude": "-74.07050000"
-        }
-      },
-      "createdAt": "2011-08-30T13:36:13.178Z",
-      "updatedAt": "2011-08-31T13:36:13.178Z"
-    },
-    {
       "id": 2,
       "email": "schroeder_duffy@zaggle.ski",
       "profile": {
@@ -411,47 +370,6 @@
       "updatedAt": "2011-04-07T20:22:12.975Z"
     },
     {
-      "id": 11,
-      "email": "lynn_joyce@kneedles.krd",
-      "profile": {
-        "name": "Lynn Joyce",
-        "country": {
-          "name": "Colombia",
-          "isoCode": "CO",
-          "flag": "🇨🇴",
-          "phonecode": "57",
-          "currency": "COP",
-          "latitude": "4.00000000",
-          "longitude": "-72.00000000",
-          "timezones": [
-            {
-              "zoneName": "America/Bogota",
-              "gmtOffset": -18000,
-              "gmtOffsetName": "UTC-05:00",
-              "abbreviation": "COT",
-              "tzName": "Colombia Time"
-            }
-          ]
-        },
-        "state": {
-          "name": "Bogotá D.C.",
-          "isoCode": "DC",
-          "countryCode": "CO",
-          "latitude": "4.28204150",
-          "longitude": "-74.50270420"
-        },
-        "city": {
-          "name": "Bogotá D.C.",
-          "countryCode": "CO",
-          "stateCode": "DC",
-          "latitude": "4.61263889",
-          "longitude": "-74.07050000"
-        }
-      },
-      "createdAt": "2013-10-22T16:31:09.010Z",
-      "updatedAt": "2013-10-23T16:31:09.010Z"
-    },
-    {
       "id": 12,
       "email": "snow_daniel@fleetmix.hm",
       "profile": {
@@ -494,50 +412,9 @@
     },
     {
       "id": 13,
-      "email": "ollie_irwin@comveyer.tips",
-      "profile": {
-        "name": "Ollie Irwin",
-        "country": {
-          "name": "Colombia",
-          "isoCode": "CO",
-          "flag": "🇨🇴",
-          "phonecode": "57",
-          "currency": "COP",
-          "latitude": "4.00000000",
-          "longitude": "-72.00000000",
-          "timezones": [
-            {
-              "zoneName": "America/Bogota",
-              "gmtOffset": -18000,
-              "gmtOffsetName": "UTC-05:00",
-              "abbreviation": "COT",
-              "tzName": "Colombia Time"
-            }
-          ]
-        },
-        "state": {
-          "name": "Bogotá D.C.",
-          "isoCode": "DC",
-          "countryCode": "CO",
-          "latitude": "4.28204150",
-          "longitude": "-74.50270420"
-        },
-        "city": {
-          "name": "Bogotá D.C.",
-          "countryCode": "CO",
-          "stateCode": "DC",
-          "latitude": "4.61263889",
-          "longitude": "-74.07050000"
-        }
-      },
-      "createdAt": "2014-10-28T21:24:16.489Z",
-      "updatedAt": "2014-10-29T21:24:16.489Z"
-    },
-    {
-      "id": 14,
       "email": "iposho@gmail.com",
       "profile": {
-        "name": "Павел Евгеньевич Кузякин",
+        "name": "Сос Саркисян",
         "country": {
           "name": "Algeria",
           "isoCode": "DZ",
@@ -564,313 +441,50 @@
           "longitude": "1.93938150"
         },
         "city": {
-          "name": "El Attaf",
+          "name": "El Abadia",
           "countryCode": "DZ",
           "stateCode": "44",
-          "latitude": "36.22393000",
-          "longitude": "1.67187000"
+          "latitude": "36.26951000",
+          "longitude": "1.68609000"
         }
       },
-      "createdAt": "2023-11-07T13:12:27.125Z",
-      "updatedAt": "2023-11-07T13:12:27.125Z"
+      "createdAt": "2023-11-08T11:13:56.030Z",
+      "updatedAt": "2023-11-08T11:13:56.030Z"
     },
     {
-      "id": 15,
-      "email": "sosik222@kuzyak.in",
+      "id": 14,
+      "email": "iposho@gmail.com",
       "profile": {
-        "name": "Сос Саркисян",
+        "name": "Юрий Борисович Лютый",
         "country": {
-          "name": "Bolivia",
-          "isoCode": "BO",
-          "flag": "🇧🇴",
-          "phonecode": "591",
-          "currency": "BOB",
-          "latitude": "-17.00000000",
-          "longitude": "-65.00000000",
+          "name": "Albania",
+          "isoCode": "AL",
+          "flag": "🇦🇱",
+          "phonecode": "355",
+          "currency": "ALL",
+          "latitude": "41.00000000",
+          "longitude": "20.00000000",
           "timezones": [
             {
-              "zoneName": "America/La_Paz",
-              "gmtOffset": -14400,
-              "gmtOffsetName": "UTC-04:00",
-              "abbreviation": "BOT",
-              "tzName": "Bolivia Time"
+              "zoneName": "Europe/Tirane",
+              "gmtOffset": 3600,
+              "gmtOffsetName": "UTC+01:00",
+              "abbreviation": "CET",
+              "tzName": "Central European Time"
             }
           ]
         },
         "state": {
-          "name": "Oruro Department",
-          "isoCode": "O",
-          "countryCode": "BO",
-          "latitude": "-18.57115790",
-          "longitude": "-67.76159830"
+          "name": "Delvinë District",
+          "isoCode": "DL",
+          "countryCode": "AL",
+          "latitude": "39.94813640",
+          "longitude": "20.09558910"
         },
-        "city": {
-          "name": "Oruro",
-          "countryCode": "BO",
-          "stateCode": "O",
-          "latitude": "-17.98333000",
-          "longitude": "-67.15000000"
-        }
+        "city": null
       },
-      "createdAt": "2023-11-07T13:13:09.195Z",
-      "updatedAt": "2023-11-07T13:43:32.997Z"
-    },
-    {
-      "id": 16,
-      "email": "sossossos@idbank.am",
-      "profile": {
-        "name": "Сос Танкян",
-        "country": {
-          "name": "Armenia",
-          "isoCode": "AM",
-          "flag": "🇦🇲",
-          "phonecode": "374",
-          "currency": "AMD",
-          "latitude": "40.00000000",
-          "longitude": "45.00000000",
-          "timezones": [
-            {
-              "zoneName": "Asia/Yerevan",
-              "gmtOffset": 14400,
-              "gmtOffsetName": "UTC+04:00",
-              "abbreviation": "AMT",
-              "tzName": "Armenia Time"
-            }
-          ]
-        },
-        "state": {
-          "name": "Gegharkunik Province",
-          "isoCode": "GR",
-          "countryCode": "AM",
-          "latitude": "40.35264260",
-          "longitude": "45.12604140"
-        },
-        "city": {
-          "name": "Sevan",
-          "countryCode": "AM",
-          "stateCode": "GR",
-          "latitude": "40.54730000",
-          "longitude": "44.94171000"
-        }
-      },
-      "createdAt": "2023-11-07T17:52:15.697Z",
-      "updatedAt": "2023-11-07T17:58:25.764Z"
-    },
-    {
-      "id": 17,
-      "email": "stupa@mail.ru",
-      "profile": {
-        "name": "Владислав Кожурин",
-        "country": {
-          "name": "Russia",
-          "isoCode": "RU",
-          "flag": "🇷🇺",
-          "phonecode": "7",
-          "currency": "RUB",
-          "latitude": "60.00000000",
-          "longitude": "100.00000000",
-          "timezones": [
-            {
-              "zoneName": "Asia/Anadyr",
-              "gmtOffset": 43200,
-              "gmtOffsetName": "UTC+12:00",
-              "abbreviation": "ANAT",
-              "tzName": "Anadyr Time[4"
-            },
-            {
-              "zoneName": "Asia/Barnaul",
-              "gmtOffset": 25200,
-              "gmtOffsetName": "UTC+07:00",
-              "abbreviation": "KRAT",
-              "tzName": "Krasnoyarsk Time"
-            },
-            {
-              "zoneName": "Asia/Chita",
-              "gmtOffset": 32400,
-              "gmtOffsetName": "UTC+09:00",
-              "abbreviation": "YAKT",
-              "tzName": "Yakutsk Time"
-            },
-            {
-              "zoneName": "Asia/Irkutsk",
-              "gmtOffset": 28800,
-              "gmtOffsetName": "UTC+08:00",
-              "abbreviation": "IRKT",
-              "tzName": "Irkutsk Time"
-            },
-            {
-              "zoneName": "Asia/Kamchatka",
-              "gmtOffset": 43200,
-              "gmtOffsetName": "UTC+12:00",
-              "abbreviation": "PETT",
-              "tzName": "Kamchatka Time"
-            },
-            {
-              "zoneName": "Asia/Khandyga",
-              "gmtOffset": 32400,
-              "gmtOffsetName": "UTC+09:00",
-              "abbreviation": "YAKT",
-              "tzName": "Yakutsk Time"
-            },
-            {
-              "zoneName": "Asia/Krasnoyarsk",
-              "gmtOffset": 25200,
-              "gmtOffsetName": "UTC+07:00",
-              "abbreviation": "KRAT",
-              "tzName": "Krasnoyarsk Time"
-            },
-            {
-              "zoneName": "Asia/Magadan",
-              "gmtOffset": 39600,
-              "gmtOffsetName": "UTC+11:00",
-              "abbreviation": "MAGT",
-              "tzName": "Magadan Time"
-            },
-            {
-              "zoneName": "Asia/Novokuznetsk",
-              "gmtOffset": 25200,
-              "gmtOffsetName": "UTC+07:00",
-              "abbreviation": "KRAT",
-              "tzName": "Krasnoyarsk Time"
-            },
-            {
-              "zoneName": "Asia/Novosibirsk",
-              "gmtOffset": 25200,
-              "gmtOffsetName": "UTC+07:00",
-              "abbreviation": "NOVT",
-              "tzName": "Novosibirsk Time"
-            },
-            {
-              "zoneName": "Asia/Omsk",
-              "gmtOffset": 21600,
-              "gmtOffsetName": "UTC+06:00",
-              "abbreviation": "OMST",
-              "tzName": "Omsk Time"
-            },
-            {
-              "zoneName": "Asia/Sakhalin",
-              "gmtOffset": 39600,
-              "gmtOffsetName": "UTC+11:00",
-              "abbreviation": "SAKT",
-              "tzName": "Sakhalin Island Time"
-            },
-            {
-              "zoneName": "Asia/Srednekolymsk",
-              "gmtOffset": 39600,
-              "gmtOffsetName": "UTC+11:00",
-              "abbreviation": "SRET",
-              "tzName": "Srednekolymsk Time"
-            },
-            {
-              "zoneName": "Asia/Tomsk",
-              "gmtOffset": 25200,
-              "gmtOffsetName": "UTC+07:00",
-              "abbreviation": "MSD+3",
-              "tzName": "Moscow Daylight Time+3"
-            },
-            {
-              "zoneName": "Asia/Ust-Nera",
-              "gmtOffset": 36000,
-              "gmtOffsetName": "UTC+10:00",
-              "abbreviation": "VLAT",
-              "tzName": "Vladivostok Time"
-            },
-            {
-              "zoneName": "Asia/Vladivostok",
-              "gmtOffset": 36000,
-              "gmtOffsetName": "UTC+10:00",
-              "abbreviation": "VLAT",
-              "tzName": "Vladivostok Time"
-            },
-            {
-              "zoneName": "Asia/Yakutsk",
-              "gmtOffset": 32400,
-              "gmtOffsetName": "UTC+09:00",
-              "abbreviation": "YAKT",
-              "tzName": "Yakutsk Time"
-            },
-            {
-              "zoneName": "Asia/Yekaterinburg",
-              "gmtOffset": 18000,
-              "gmtOffsetName": "UTC+05:00",
-              "abbreviation": "YEKT",
-              "tzName": "Yekaterinburg Time"
-            },
-            {
-              "zoneName": "Europe/Astrakhan",
-              "gmtOffset": 14400,
-              "gmtOffsetName": "UTC+04:00",
-              "abbreviation": "SAMT",
-              "tzName": "Samara Time"
-            },
-            {
-              "zoneName": "Europe/Kaliningrad",
-              "gmtOffset": 7200,
-              "gmtOffsetName": "UTC+02:00",
-              "abbreviation": "EET",
-              "tzName": "Eastern European Time"
-            },
-            {
-              "zoneName": "Europe/Kirov",
-              "gmtOffset": 10800,
-              "gmtOffsetName": "UTC+03:00",
-              "abbreviation": "MSK",
-              "tzName": "Moscow Time"
-            },
-            {
-              "zoneName": "Europe/Moscow",
-              "gmtOffset": 10800,
-              "gmtOffsetName": "UTC+03:00",
-              "abbreviation": "MSK",
-              "tzName": "Moscow Time"
-            },
-            {
-              "zoneName": "Europe/Samara",
-              "gmtOffset": 14400,
-              "gmtOffsetName": "UTC+04:00",
-              "abbreviation": "SAMT",
-              "tzName": "Samara Time"
-            },
-            {
-              "zoneName": "Europe/Saratov",
-              "gmtOffset": 14400,
-              "gmtOffsetName": "UTC+04:00",
-              "abbreviation": "MSD",
-              "tzName": "Moscow Daylight Time+4"
-            },
-            {
-              "zoneName": "Europe/Ulyanovsk",
-              "gmtOffset": 14400,
-              "gmtOffsetName": "UTC+04:00",
-              "abbreviation": "SAMT",
-              "tzName": "Samara Time"
-            },
-            {
-              "zoneName": "Europe/Volgograd",
-              "gmtOffset": 14400,
-              "gmtOffsetName": "UTC+04:00",
-              "abbreviation": "MSK",
-              "tzName": "Moscow Standard Time"
-            }
-          ]
-        },
-        "state": {
-          "name": "Moscow Oblast",
-          "isoCode": "MOS",
-          "countryCode": "RU",
-          "latitude": "55.34039600",
-          "longitude": "38.29176510"
-        },
-        "city": {
-          "name": "Mytishchi Urban Okrug",
-          "countryCode": "RU",
-          "stateCode": "MOS",
-          "latitude": "56.00000000",
-          "longitude": "37.66667000"
-        }
-      },
-      "createdAt": "2023-11-07T17:59:22.783Z",
-      "updatedAt": "2023-11-07T18:09:35.366Z"
+      "createdAt": "2023-11-08T11:26:20.255Z",
+      "updatedAt": "2023-11-08T11:26:20.255Z"
     }
   ]
 }
