@@ -69,6 +69,9 @@ export default function RecordForm({
 
     if (name === 'profile.name') {
       setInputTouched({ ...inputTouched, name: !isNameValid(value) });
+    } else if (name === 'profile.phone') {
+      console.log('profile.phone')
+      setInputTouched({ ...inputTouched, phone: !isPhoneValid(value) });
     } else {
       setInputTouched({ ...inputTouched, [name]: true });
     }
@@ -76,14 +79,14 @@ export default function RecordForm({
     onInputChange(e);
   };
 
-  const handleRadioButtonChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setRadioButtonValue((event.target as HTMLInputElement).value);
+  const handleRadioButtonChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setRadioButtonValue((e.target as HTMLInputElement).value);
   };
 
-  const handleCheckBoxChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleCheckBoxChange = (e: ChangeEvent<HTMLInputElement>) => {
     setCheckBoxState({
       ...checkBoxState,
-      [event.target.name]: event.target.checked,
+      [e.target.name]: e.target.checked,
     });
   };
 
@@ -92,10 +95,12 @@ export default function RecordForm({
   };
 
   const { accept, updates } = checkBoxState;
-  const isInputsValid = isNameValid(formData.profile.name) && isEmailValid(formData.email);
-  const isCheckboxesValid = radioButtonValue === 'mutual' || (radioButtonValue === 'license' && accept);
 
-  const isButtonDisabled = !isInputsValid && !isCheckboxesValid;
+  const isReuqiredInputsFilled = formData.profile.name && formData.profile.phone && formData.email;
+  const isInputsValid = isNameValid(formData.profile.name) && isEmailValid(formData.email);
+  const isCheckboxesValid = (radioButtonValue === 'license' && accept) || radioButtonValue === 'mutual';
+
+  const isButtonDisabled = !isReuqiredInputsFilled && !isInputsValid && !isCheckboxesValid;
 
   return (
     <form>
@@ -116,7 +121,7 @@ export default function RecordForm({
         }
       />
       <Input
-        name="phone"
+        name="profile.phone"
         value={formData.profile.phone}
         onChange={handleInputChange}
         label="Phone"

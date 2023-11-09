@@ -33,8 +33,6 @@ export default function Record() {
     refetchOnMountOrArgChange: true,
   });
 
-  console.log(data);
-
   const { createRecord, updateRecord } = useCreateOrUpdateRecord();
   const { deleteRecord } = useDeleteRecord();
 
