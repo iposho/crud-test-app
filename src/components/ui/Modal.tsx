@@ -2,6 +2,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import MUIModal from '@mui/material/Modal';
 import CloseIcon from '@mui/icons-material/Close';
+import IconButton from '@mui/material/IconButton';
 
 import Link from '@mui/material/Link';
 
@@ -109,8 +110,8 @@ export default function Modal(
             </Button>
           </Box>
         }
-        <button
-          style={{
+        <IconButton
+          sx={{
             position: 'absolute',
             right: '0.5rem',
             top: '0.5rem'
@@ -118,7 +119,7 @@ export default function Modal(
           onClick={onClose}
         >
           <CloseIcon />
-        </button>
+        </IconButton>
       </Box>
     </MUIModal>
   );

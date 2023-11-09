@@ -3,6 +3,7 @@ const initialData = {
   email: '',
   profile: {
     name: '',
+    phone: '',
     country: {
       name: '',
       isoCode: '',

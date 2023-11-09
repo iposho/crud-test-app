@@ -2,6 +2,7 @@ import { useState, useEffect, MouseEvent } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import Container from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
 import { Link } from 'react-router-dom';
@@ -69,6 +70,13 @@ export default function Table({ data, onDeleteRecord, refetch }: TableProps) {
       valueGetter: (params) => params.row.profile.name
     },
     {
+      field: 'phone',
+      headerName: 'Phone',
+      width: 200,
+      flex: .5,
+      valueGetter: (params) => params.row.profile.phone
+    },
+    {
       field: 'country',
       headerName: 'Country',
       width: 130,
@@ -81,7 +89,7 @@ export default function Table({ data, onDeleteRecord, refetch }: TableProps) {
       headerName: 'State',
       width: 130,
       flex: 0.5,
-      valueGetter: (params) => params.row.profile.state.name,
+      valueGetter: (params) => params.row.profile.state?.name,
       sortComparator: (v1, v2) => v1.localeCompare(v2),
     },
     {
@@ -126,7 +134,7 @@ export default function Table({ data, onDeleteRecord, refetch }: TableProps) {
   ];
 
   return (
-    <div style={{ width: '100%' }}>
+    <Container style={{ width: '100vw', marginTop: '1rem' }}>
       <DataGrid
         rows={data}
         getRowClassName={(params) =>
@@ -151,6 +159,6 @@ export default function Table({ data, onDeleteRecord, refetch }: TableProps) {
         onDelete={handleDelete}
         message={`Deleting record with id ${recordIdToDelete}`}
       />
-    </div>
+    </Container>
   );
 }

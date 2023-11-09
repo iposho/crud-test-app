@@ -3,9 +3,18 @@
 @import '@fontsource/roboto/500.css';
 @import '@fontsource/roboto/700.css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 1rem;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
 
 .highLigthedRow {
   background-color: deepskyblue;

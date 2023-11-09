@@ -30,7 +30,10 @@ export default function Record() {
 
   const { data, isLoading, isError } = useGetRecordByIdQuery(id || '', {
     skip: !isEditing,
+    refetchOnMountOrArgChange: true,
   });
+
+  console.log(data);
 
   const { createRecord, updateRecord } = useCreateOrUpdateRecord();
   const { deleteRecord } = useDeleteRecord();
@@ -86,6 +89,17 @@ export default function Record() {
     }
   };
 
+  const handleSelectChange = (name: string, value: ICountry | IState | ICity | null) => {
+    console.log(value);
+    setInputChanges({
+      ...inputChanges,
+      profile: {
+        ...formData.profile,
+        [name]: value
+      }
+    });
+  }
+
   const handleCreate = async () => {
     if (selectedCountry && selectedState) {
       const updatedProfile = {
@@ -121,10 +135,10 @@ export default function Record() {
 
   const handleUpdate = async () => {
 
-    if (id && selectedCountry && selectedState) {
+    if (id && selectedCountry) {
       const updatedProfile = {
         country: selectedCountry,
-        state: selectedState,
+        state: selectedState || null,
         city: selectedCity || null,
       };
 
@@ -148,7 +162,7 @@ export default function Record() {
         setIsModalOpen(true);
         setSuccessMessage(`Record with id ${numericId} has been successfully updated`);
         console.log(`Record with id ${numericId} has been successfully updated`, response.data);
-        navigate('/');
+        navigate('/', { state: { id: numericId } })
       }
     }
   };
@@ -195,6 +209,7 @@ export default function Record() {
               selectedCity={selectedCity}
               setSelectedCity={setSelectedCity}
               onInputChange={handleInputChange}
+              onSelectChange={handleSelectChange}
               onCreate={handleCreate}
               onUpdate={handleUpdate}
               onDelete={handleDelete}

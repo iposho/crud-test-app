@@ -3,7 +3,12 @@ import { useLocation } from 'react-router-dom';
 import { useGetAllRecordsQuery } from '../store/api/server.api.ts';
 import useDeleteRecord from '../hooks/useDeleteRecord.ts';
 
+import CircularProgress from '@mui/material/CircularProgress';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
+
 import Table from '../components/layout/Table.tsx';
+import Container from '@mui/material/Container';
 
 export default function Home() {
   const { isLoading, isError, data, refetch } = useGetAllRecordsQuery('');
@@ -27,19 +32,30 @@ export default function Home() {
   };
 
   return (
-    <>
-      { isError && <h1 className="text-red">Something went wrong...</h1> }
-      <div className="flex items-start flex-col px-4 w-full">
-        { isLoading && <h1 className="text-red">Loading...</h1> }
-        {
-          data &&
-          <Table
-            data={data}
-            onDeleteRecord={handleDeleteRecord}
-            refetch={refetch}
-          />
-        }
-      </div>
-    </>
+    <Container
+      sx={{
+        width: '100%',
+        minHeight: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}
+      maxWidth={false}
+    >
+      { isError &&
+        <Alert severity="error">
+          <AlertTitle>Error</AlertTitle>
+          Something went wrong
+        </Alert> }
+      { isLoading && <CircularProgress size={60} /> }
+      {
+        data &&
+        <Table
+          data={data}
+          onDeleteRecord={handleDeleteRecord}
+          refetch={refetch}
+        />
+      }
+    </Container>
   )
 }

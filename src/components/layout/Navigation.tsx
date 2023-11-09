@@ -58,7 +58,7 @@ export default function Navigation(props: NavigationMUIProps) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex', marginBottom: '1rem' }}>
+    <Box>
       <CssBaseline />
       <AppBar component="nav" position="static">
         <Toolbar>

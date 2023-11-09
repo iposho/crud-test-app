@@ -12,6 +12,8 @@ interface ComboBoxProps {
   setSelectedState: (state: IState | null) => void;
   selectedCity: ICity | null;
   setSelectedCity: (city: ICity | null) => void;
+  onChange?: (changed: boolean) => void;
+  onSelectChange: (name: string, value: ICountry | IState | ICity | null) => void;
 }
 
 export default function ComboBox(props: ComboBoxProps) {
@@ -33,11 +35,12 @@ export default function ComboBox(props: ComboBoxProps) {
     }
   }, [props.selectedCountry, props.selectedState]);
 
-  const handleCountryChange = (event: React.ChangeEvent<object>, value: ICountry | null) => {
-    event.preventDefault();
+  const handleCountryChange = (e: React.ChangeEvent<object>, value: ICountry | null) => {
+    e.preventDefault();
     props.setSelectedCountry(value);
     props.setSelectedState(null);
     props.setSelectedCity(null);
+    props.onSelectChange('country', value);
 
     if (value) {
       const countryStates = State.getStatesOfCountry(value.isoCode);
@@ -45,10 +48,11 @@ export default function ComboBox(props: ComboBoxProps) {
     }
   };
 
-  const handleStateChange = (event: React.ChangeEvent<object>, value: IState | null) => {
-    event.preventDefault();
+  const handleStateChange = (e: React.ChangeEvent<object>, value: IState | null) => {
+    e.preventDefault();
     props.setSelectedState(value);
     props.setSelectedCity(null);
+    props.onSelectChange('state', value);
 
     if (value && props.selectedCountry) {
       const stateCities = City.getCitiesOfState(props.selectedCountry.isoCode, value.isoCode);
@@ -56,9 +60,10 @@ export default function ComboBox(props: ComboBoxProps) {
     }
   };
 
-  const handleCityChange = (event: React.ChangeEvent<object>, value: ICity | null) => {
-    event.preventDefault();
+  const handleCityChange = (e: React.ChangeEvent<object>, value: ICity | null) => {
+    e.preventDefault();
     props.setSelectedCity(value);
+    props.onSelectChange('city', value);
   };
 
   return (

@@ -23,7 +23,8 @@ export interface IRecord {
 export interface IProfile {
   city?: ICity | null
   name: string
-  state: IState
+  phone: string
+  state?: IState | null
   country: ICountry
 }
 
@@ -61,4 +62,3 @@ export interface ITimezone {
   abbreviation: string
   gmtOffsetName: string
 }
-

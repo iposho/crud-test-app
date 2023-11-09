@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 
 interface InputFieldProps {
   type?: string;
+  error?: boolean;
   name: string;
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -12,16 +13,19 @@ interface InputFieldProps {
   label?: string;
   required?: boolean;
   sx?: object;
+  helperText?: string;
 }
 
 const Input: React.FC<InputFieldProps> = ({
   name,
+  error,
   value,
   onChange,
   placeholder,
   label = '',
   required = false,
   sx = { my: '.5rem' },
+  helperText
 }) => {
   return (
     <TextField
@@ -32,6 +36,8 @@ const Input: React.FC<InputFieldProps> = ({
       value={value}
       placeholder={placeholder}
       sx={sx}
+      error={error}
+      helperText={helperText}
       fullWidth
     />
   );
