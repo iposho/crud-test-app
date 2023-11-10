@@ -37,6 +37,10 @@ const initialData = {
       longitude: '',
     },
   },
+  license: true,
+  mutual: false,
+  accept: true,
+  updates: false,
   createdAt: '',
   updatedAt: '',
 };
