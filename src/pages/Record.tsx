@@ -40,7 +40,7 @@ interface IForm {
   mutual: boolean;
   accept: boolean;
   confirmEmail: string;
-  newsletters: boolean;
+  updates: boolean;
 }
 
 export default function Record() {
@@ -54,6 +54,8 @@ export default function Record() {
     skip: !isEditing,
     refetchOnMountOrArgChange: true,
   });
+
+  console.log({ data })
 
   const formData = (Array.isArray(data) && data.length > 0) && data[0];
 
@@ -77,19 +79,26 @@ export default function Record() {
     setValue,
     getValues,
     resetField,
+    reset
   } = useForm<IForm>({
     defaultValues: useMemo(() => {
       if (isEditing) {
+        console.log(formData)
         return formData;
       }
     }, [formData, isEditing])
   });
 
   useEffect(() => {
-    if (!formData && isEditing) {
+    if (!formData && isEditing && !isLoading) {
+      console.log('Redirecting...');
       navigate('/');
     }
-  }, [isEditing, formData, navigate]);
+  }, [isLoading, isEditing, formData, navigate]);
+
+  useEffect(() => {
+    reset(formData);
+  }, [formData, reset]);
 
   // useFormPersist('crudForm', {
   //   watch,
@@ -163,7 +172,7 @@ export default function Record() {
 
 
   return (
-    (Array.isArray(data) && data.length > 0 || !isEditing) &&
+    (formData || !isEditing) &&
     <Container sx={{ width: '100%' }}>
       {isError && <Typography className="text-red">Something went wrong...</Typography>}
       {
@@ -352,6 +361,7 @@ export default function Record() {
                   >
                     <FormControlLabel
                       value="license"
+                      checked={!!license}
                       control={<Radio />}
                       label="By license agreement"
                       onClick={() => setValue('mutual', false)}
@@ -359,6 +369,7 @@ export default function Record() {
                     />
                     <FormControlLabel
                       value="mutual"
+                      checked={!!mutual}
                       control={<Radio />}
                       label="By mutual agreement"
                       onClick={() => {
@@ -375,6 +386,7 @@ export default function Record() {
                 {(license && !mutual) &&
                   <>
                     <FormControlLabel
+                      checked={!!accept}
                       control={
                         <Checkbox name="accept"  />
                       }
@@ -383,21 +395,23 @@ export default function Record() {
                       {...register('accept', { required: !!license })}
                     />
                     <FormControlLabel
+                      checked={!!watch('updates')}
                       control={
                         <Checkbox name="updates" />
                       }
                       label="Send me updates by email"
-                      {...register('newsletters', {})}
+                      {...register('updates', {})}
                     />
                   </>
                 }
                 {(mutual && !license) &&
                   <FormControlLabel
+                    checked={!!watch('updates')}
                     control={
                       <Checkbox name="updates" />
                     }
                     label="Send me updates by email"
-                    {...register('newsletters', {})}
+                    {...register('updates', {})}
                   />
                 }
               </FormGroup>

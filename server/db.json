@@ -253,48 +253,6 @@
       "updatedAt": "Mon Jun 12 2023 19:06:13 GMT+0400 (Армения, стандартное время)"
     },
     {
-      "id": 7,
-      "email": "hahnsloan@corpulse.com",
-      "profile": {
-        "name": "Abigail Melton",
-        "phone": "+1 (951) 549-2803",
-        "country": {
-          "name": "Colombia",
-          "isoCode": "CO",
-          "flag": "🇨🇴",
-          "phonecode": 57,
-          "currency": "COP",
-          "latitude": 4,
-          "longitude": -72,
-          "timezones": [
-            {
-              "zoneName": "America/Bogota",
-              "gmtOffset": -18000,
-              "gmtOffsetName": "UTC-05:00",
-              "abbreviation": "COT",
-              "tzName": "Colombia Time"
-            }
-          ]
-        },
-        "state": {
-          "name": "Bogotá D.C.",
-          "isoCode": "DC",
-          "countryCode": "CO",
-          "latitude": 4.2820415,
-          "longitude": -74.5027042
-        },
-        "city": {
-          "name": "Bogotá D.C.",
-          "countryCode": "CO",
-          "stateCode": "DC",
-          "latitude": 4.61263889,
-          "longitude": -74.0705
-        }
-      },
-      "createdAt": "Tue Apr 21 2020 00:22:05 GMT+0400 (Армения, стандартное время)",
-      "updatedAt": "Fri Sep 08 2023 02:42:04 GMT+0400 (Армения, стандартное время)"
-    },
-    {
       "id": 8,
       "email": "abigailmelton@corpulse.com",
       "profile": {
@@ -545,48 +503,6 @@
       },
       "createdAt": "Sat Aug 26 2017 10:00:21 GMT+0400 (Армения, стандартное время)",
       "updatedAt": "Wed Aug 09 2023 01:37:28 GMT+0400 (Армения, стандартное время)"
-    },
-    {
-      "id": 14,
-      "email": "banksweaver@corpulse.com",
-      "profile": {
-        "name": "Hodges Gilliam",
-        "phone": "+1 (936) 536-2998",
-        "country": {
-          "name": "Colombia",
-          "isoCode": "CO",
-          "flag": "🇨🇴",
-          "phonecode": 57,
-          "currency": "COP",
-          "latitude": 4,
-          "longitude": -72,
-          "timezones": [
-            {
-              "zoneName": "America/Bogota",
-              "gmtOffset": -18000,
-              "gmtOffsetName": "UTC-05:00",
-              "abbreviation": "COT",
-              "tzName": "Colombia Time"
-            }
-          ]
-        },
-        "state": {
-          "name": "Bogotá D.C.",
-          "isoCode": "DC",
-          "countryCode": "CO",
-          "latitude": 4.2820415,
-          "longitude": -74.5027042
-        },
-        "city": {
-          "name": "Bogotá D.C.",
-          "countryCode": "CO",
-          "stateCode": "DC",
-          "latitude": 4.61263889,
-          "longitude": -74.0705
-        }
-      },
-      "createdAt": "Sun May 23 2021 02:11:07 GMT+0400 (Армения, стандартное время)",
-      "updatedAt": "Mon Aug 14 2023 15:28:57 GMT+0400 (Армения, стандартное время)"
     },
     {
       "id": 15,
@@ -1024,7 +940,7 @@
       "accept": true,
       "newsletters": false,
       "createdAt": "2023-11-09T19:36:29.690Z",
-      "updatedAt": "2023-11-09T19:36:29.690Z",
+      "updatedAt": "2023-11-10T00:17:56.515Z",
       "id": 16
     },
     {
@@ -1241,13 +1157,14 @@
       },
       "email": "sos@kuzyak.in",
       "confirmEmail": "sos@kuzyak.in",
-      "license": false,
-      "mutual": "mutual",
-      "accept": false,
+      "license": "license",
+      "mutual": false,
+      "accept": true,
       "newsletters": false,
       "createdAt": "2023-11-09T20:56:07.789Z",
-      "updatedAt": "2023-11-09T21:35:36.158Z",
-      "id": 19
+      "updatedAt": "2023-11-10T00:22:28.214Z",
+      "id": 19,
+      "updates": false
     }
   ]
 }
