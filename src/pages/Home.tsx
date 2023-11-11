@@ -1,17 +1,20 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useGetAllRecordsQuery } from '../store/api/server.api.ts';
-import useDeleteRecord from '../hooks/useDeleteRecord.ts';
 
 import CircularProgress from '@mui/material/CircularProgress';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
-
-import Table from '../components/layout/Table.tsx';
 import Container from '@mui/material/Container';
 
+import Table from '../components/layout/Table';
+
+import useDeleteRecord from '../hooks/useDeleteRecord';
+import { useGetAllRecordsQuery } from '../store/api/server.api';
+
 export default function Home() {
-  const { isLoading, isError, data, refetch } = useGetAllRecordsQuery('');
+  const {
+    isLoading, isError, data, refetch,
+  } = useGetAllRecordsQuery('');
   const { deleteRecord } = useDeleteRecord();
 
   const location = useLocation();
@@ -21,13 +24,13 @@ export default function Home() {
       refetch();
       location.state = null;
     }
-  }, [location, refetch])
+  }, [location, refetch]);
 
   const handleDeleteRecord = async (recordId: number) => {
     try {
       await deleteRecord(recordId);
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
   };
 
@@ -38,24 +41,28 @@ export default function Home() {
         minHeight: '100vh',
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
       }}
       maxWidth={false}
     >
-      { isError &&
-        <Alert severity="error">
-          <AlertTitle>Error</AlertTitle>
-          Something went wrong
-        </Alert> }
+      { isError
+        && (
+          <Alert severity="error">
+            <AlertTitle>Error</AlertTitle>
+            Something went wrong
+          </Alert>
+        ) }
       { isLoading && <CircularProgress size={60} /> }
       {
-        data &&
-        <Table
-          data={data}
-          onDeleteRecord={handleDeleteRecord}
-          refetch={refetch}
-        />
+        data
+        && (
+          <Table
+            data={data}
+            onDeleteRecord={handleDeleteRecord}
+            refetch={refetch}
+          />
+        )
       }
     </Container>
-  )
+  );
 }

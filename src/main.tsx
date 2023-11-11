@@ -1,19 +1,18 @@
-import ReactDOM from 'react-dom/client'
-import 'regenerator-runtime'
+import ReactDOM from 'react-dom/client';
 
 import { BrowserRouter } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
-import { store } from './store';
+import store from './store';
 
-import App from './App.tsx'
+import App from './App';
 
-import './styles/global.css'
+import './styles/global.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </Provider>
-)
+  </Provider>,
+);

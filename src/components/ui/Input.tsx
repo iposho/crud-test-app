@@ -3,12 +3,10 @@ import React, { ChangeEvent } from 'react';
 import TextField from '@mui/material/TextField';
 
 interface InputFieldProps {
-  type?: string;
   error?: boolean;
   name: string;
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  className?: string;
   placeholder?: string;
   label?: string;
   required?: boolean;
@@ -25,22 +23,20 @@ const Input: React.FC<InputFieldProps> = ({
   label = '',
   required = false,
   sx = { my: '.5rem' },
-  helperText
-}) => {
-  return (
-    <TextField
-      label={label}
-      onChange={onChange}
-      required={required}
-      name={name}
-      value={value}
-      placeholder={placeholder}
-      sx={sx}
-      error={error}
-      helperText={helperText}
-      fullWidth
-    />
-  );
-};
+  helperText,
+}) => (
+  <TextField
+    label={label}
+    onChange={onChange}
+    required={required}
+    name={name}
+    value={value}
+    placeholder={placeholder}
+    sx={sx}
+    error={error}
+    helperText={helperText}
+    fullWidth
+  />
+);
 
 export default Input;

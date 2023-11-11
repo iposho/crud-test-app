@@ -1,14 +1,13 @@
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import MUIModal from '@mui/material/Modal';
+import { Link as RouterLink } from 'react-router-dom';
+
+import {
+  Box, Typography, Modal as MUIModal, Link,
+} from '@mui/material';
+
 import CloseIcon from '@mui/icons-material/Close';
 import IconButton from '@mui/material/IconButton';
 
-import Link from '@mui/material/Link';
-
-import Button from './Button.tsx';
-
-import { Link as RouterLink } from 'react-router-dom';
+import Button from './Button';
 
 const modalStyle = {
   position: 'absolute' as const,
@@ -24,7 +23,6 @@ const modalStyle = {
 
 interface ModalProps {
   open: boolean;
-  isEditing?: boolean;
   isDeleting?: boolean;
   onClose: () => void;
   onDelete?: () => void;
@@ -43,9 +41,9 @@ export default function Modal(
     isButtonsHide,
     isDeleting,
     onDelete,
-    onDeleteButtonClick
-  }:ModalProps) {
-
+    onDeleteButtonClick,
+  }:ModalProps,
+) {
   return (
     <MUIModal
       open={open}
@@ -59,7 +57,7 @@ export default function Modal(
           variant="h6"
           component="h2"
           sx={{
-            textAlign: 'center'
+            textAlign: 'center',
           }}
         >
           {message}
@@ -68,53 +66,57 @@ export default function Modal(
           id="modal-modal-description"
           sx={{
             mt: 2,
-            textAlign: 'center'
+            textAlign: 'center',
           }}
         >
           {
             (!isButtonsHide && isDeleting) && 'Are you sure you want to delete this record?'
           }
           {
-            !isDeleting &&
-            <Link
-              component={RouterLink}
-              to="/"
-              state={{
-                id,
-              }}
-            >
-              ← Return to records list
-            </Link>
+            !isDeleting
+            && (
+              <Link
+                component={RouterLink}
+                to="/"
+                state={{
+                  id,
+                }}
+              >
+                ← Return to records list
+              </Link>
+            )
           }
         </Typography>
         {
-          (!isButtonsHide && isDeleting) &&
-          <Box
-            sx={{
-              justifyContent: 'space-around',
-              display: 'flex',
-              marginTop: '1.5rem',
-            }}
-          >
-            <Button
-              onClick={onClose}
-              color="primary"
+          (!isButtonsHide && isDeleting)
+          && (
+            <Box
+              sx={{
+                justifyContent: 'space-around',
+                display: 'flex',
+                marginTop: '1.5rem',
+              }}
             >
-              Cancel
-            </Button>
-            <Button
-              onClick={onDeleteButtonClick || onDelete}
-              color="error"
-            >
-              Delete
-            </Button>
-          </Box>
+              <Button
+                onClick={onClose}
+                color="primary"
+              >
+                Cancel
+              </Button>
+              <Button
+                onClick={onDeleteButtonClick || onDelete}
+                color="error"
+              >
+                Delete
+              </Button>
+            </Box>
+          )
         }
         <IconButton
           sx={{
             position: 'absolute',
             right: '0.5rem',
-            top: '0.5rem'
+            top: '0.5rem',
           }}
           onClick={onClose}
         >

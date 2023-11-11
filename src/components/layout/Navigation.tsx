@@ -19,7 +19,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 type NavigationMUIProps = {
   window?: () => Window;
-}
+};
 
 const drawerWidth = 240;
 
@@ -39,9 +39,11 @@ export default function Navigation(props: NavigationMUIProps) {
         {
           pathname === '/'
             ? 'CRUD Test App'
-            : <Link to="/">
-              CRUD Test App
-            </Link>
+            : (
+              <Link to="/">
+                CRUD Test App
+              </Link>
+            )
         }
       </Typography>
       <Divider />
@@ -55,7 +57,9 @@ export default function Navigation(props: NavigationMUIProps) {
     </Box>
   );
 
-  const container = window !== undefined ? () => window().document.body : undefined;
+  const container = window !== undefined
+    ? () => window().document.body
+    : undefined;
 
   return (
     <Box>
@@ -79,21 +83,25 @@ export default function Navigation(props: NavigationMUIProps) {
             {
               pathname === '/'
                 ? 'CRUD Test App'
-                : <Link to="/">
-                  CRUD Test App
-                </Link>
+                : (
+                  <Link to="/">
+                    CRUD Test App
+                  </Link>
+                )
             }
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {
               pathname === '/records/add'
                 ? null
-                : <Link to="/records/add">
-                  <Button sx={{ color: '#fff' }}>
-                    <AddCircleOutlineOutlinedIcon sx={{ marginRight: '.5rem' }} />
-                    Add New Record
-                  </Button>
-                </Link>
+                : (
+                  <Link to="/records/add">
+                    <Button sx={{ color: '#fff' }}>
+                      <AddCircleOutlineOutlinedIcon sx={{ marginRight: '.5rem' }} />
+                      Add New Record
+                    </Button>
+                  </Link>
+                )
             }
           </Box>
         </Toolbar>

@@ -1,15 +1,15 @@
 import { useState, useEffect, MouseEvent } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import Container from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
-import { Link } from 'react-router-dom';
-import { Records } from '../../models/models.ts';
+import Modal from '../ui/Modal';
 
-import formatISODate from '../../helpers/formatDate.ts';
-import Modal from '../ui/Modal.tsx';
+import { Records } from '../../models/models';
+
+import formatISODate from '../../helpers/formatDate';
 
 interface TableProps {
   data: Records;
@@ -28,11 +28,11 @@ export default function Table({ data, onDeleteRecord, refetch }: TableProps) {
   };
 
   const location = useLocation();
-  const state = location.state;
+  const { state } = location;
 
   useEffect(() => {
     if (state?.id) {
-      setHighlightedRowId(state.id)
+      setHighlightedRowId(state.id);
     }
   }, [state]);
 
@@ -61,20 +61,22 @@ export default function Table({ data, onDeleteRecord, refetch }: TableProps) {
 
   const columns: GridColDef[] = [
     { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'email', headerName: 'Email', width: 250, flex: .5 },
+    {
+      field: 'email', headerName: 'Email', width: 250, flex: 0.5,
+    },
     {
       field: 'name',
       headerName: 'Name',
       width: 200,
-      flex: .5,
-      valueGetter: (params) => params.row.profile.name
+      flex: 0.5,
+      valueGetter: (params) => params.row.profile.name,
     },
     {
       field: 'phone',
       headerName: 'Phone',
       width: 200,
-      flex: .5,
-      valueGetter: (params) => params.row.profile.phone
+      flex: 0.5,
+      valueGetter: (params) => params.row.profile.phone,
     },
     {
       field: 'country',
@@ -104,8 +106,8 @@ export default function Table({ data, onDeleteRecord, refetch }: TableProps) {
       field: 'updatedAt',
       headerName: 'Updated At',
       width: 130,
-      flex: .5,
-      valueGetter: (params) => formatISODate(params.row.updatedAt)
+      flex: 0.5,
+      valueGetter: (params) => formatISODate(params.row.updatedAt),
     },
     {
       field: 'Edit Link',
@@ -137,9 +139,7 @@ export default function Table({ data, onDeleteRecord, refetch }: TableProps) {
     <Container style={{ width: '100vw', marginTop: '1rem' }}>
       <DataGrid
         rows={data}
-        getRowClassName={(params) =>
-          params.row.id === highlightedRowId ? 'highLigthedRow' : ''
-        }
+        getRowClassName={(params) => (params.row.id === highlightedRowId ? 'highLigthedRow' : '')}
         columns={columns}
         loading={!data}
         onRowClick={() => {
@@ -155,7 +155,7 @@ export default function Table({ data, onDeleteRecord, refetch }: TableProps) {
         open={isDeleteModalOpen}
         onClose={() => setDeleteModalOpen(false)}
         id={recordIdToDelete}
-        isDeleting={true}
+        isDeleting
         onDelete={handleDelete}
         message={`Deleting record with id ${recordIdToDelete}`}
       />

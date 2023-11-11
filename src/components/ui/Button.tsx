@@ -18,20 +18,18 @@ const Button: React.FC<ButtonProps> = ({
   variant = 'contained',
   children,
   sx,
-  color
-}) => {
-  return (
-    <MUIButton
-      variant={variant}
-      type={type}
-      onClick={onClick}
-      sx={sx}
-      color={color}
-      disabled={disabled}
-    >
-      {children}
-    </MUIButton>
-  );
-};
+  color,
+}) => (
+  <MUIButton
+    variant={variant}
+    type={type}
+    onClick={onClick}
+    sx={sx}
+    color={color}
+    disabled={disabled}
+  >
+    {children}
+  </MUIButton>
+);
 
 export default Button;

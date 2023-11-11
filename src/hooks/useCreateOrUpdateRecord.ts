@@ -1,10 +1,11 @@
-import { useCreateRecordMutation, useUpdateRecordMutation } from '../store/api/server.api.ts';
-import { IRecord } from '../models/models.ts';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useCreateRecordMutation, useUpdateRecordMutation } from '../store/api/server.api';
+import { IRecord } from '../models/models';
 
-type CreateOrUpdateRecordData = {
+interface CreateOrUpdateRecordData {
   createRecord: (formData: IRecord) => Promise<any>;
   updateRecord: (id: number, formData: IRecord) => Promise<any>;
-};
+}
 
 const useCreateOrUpdateRecord = (): CreateOrUpdateRecordData => {
   const [createRecordMutation] = useCreateRecordMutation();
@@ -17,7 +18,7 @@ const useCreateOrUpdateRecord = (): CreateOrUpdateRecordData => {
       updatedAt: new Date(),
     };
 
-    return await createRecordMutation({
+    return createRecordMutation({
       data: recordData,
     });
   };
@@ -28,7 +29,7 @@ const useCreateOrUpdateRecord = (): CreateOrUpdateRecordData => {
       updatedAt: new Date(),
     };
 
-    return await updateRecordMutation({
+    return updateRecordMutation({
       id,
       data: recordData,
     });
@@ -36,5 +37,5 @@ const useCreateOrUpdateRecord = (): CreateOrUpdateRecordData => {
 
   return { createRecord, updateRecord };
 };
-
+/* eslint-enable @typescript-eslint/no-explicit-any */
 export default useCreateOrUpdateRecord;

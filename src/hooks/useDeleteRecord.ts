@@ -1,4 +1,4 @@
-import { useDeleteRecordMutation } from '../store/api/server.api.ts';
+import { useDeleteRecordMutation } from '../store/api/server.api';
 
 type DeleteRecordData = {
   deleteRecord: (id: number) => Promise<void>;

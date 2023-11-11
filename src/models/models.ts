@@ -1,4 +1,4 @@
-export type Records = IRecord[]
+export type Records = IRecord[];
 
 export interface ICreateRecordRequest {
   data: object;

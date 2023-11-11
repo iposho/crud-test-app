@@ -3,25 +3,26 @@ import {
   Records,
   IRecord,
   IUpdateRecordRequest,
-  IUpdateRecordResponse, ICreateRecordRequest
-} from '../../models/models.ts';
+  IUpdateRecordResponse,
+  ICreateRecordRequest,
+} from '../../models/models';
 
 export const serverApi = createApi({
   reducerPath: 'server/api',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:5100'
+    baseUrl: 'http://localhost:5100',
   }),
-  endpoints: build => ({
+  endpoints: (build) => ({
     getAllRecords: build.query<Records, string>({
-      query: () => 'records'
+      query: () => 'records',
     }),
     getRecordById: build.query<IRecord, string>({
       query: (id) => ({
         url: 'records',
         params: {
           id,
-        }
-      })
+        },
+      }),
     }),
     createRecord: build.mutation<ICreateRecordRequest, ICreateRecordRequest>({
       query: (newRecord) => ({
@@ -43,13 +44,13 @@ export const serverApi = createApi({
         method: 'DELETE', // Метод HTTP для удаления
       }),
     }),
-  })
-})
+  }),
+});
 
 export const {
   useGetAllRecordsQuery,
   useGetRecordByIdQuery,
   useCreateRecordMutation,
   useUpdateRecordMutation,
-  useDeleteRecordMutation
+  useDeleteRecordMutation,
 } = serverApi;

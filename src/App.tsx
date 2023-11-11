@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
 
-import Home from './pages/Home.tsx';
-import Record from './pages/Record.tsx';
-import Navigation from './components/layout/Navigation.tsx';
+import Home from './pages/Home';
+import Record from './pages/Record';
+import Navigation from './components/layout/Navigation';
 
-const App = () => {
+function App() {
   return (
     <>
       <Navigation />
@@ -14,7 +14,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
