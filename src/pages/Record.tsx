@@ -16,9 +16,9 @@ import {
   TextField,
 } from '@mui/material';
 
-// import useFormPersist from 'react-hook-form-persist'
-
 import { Country, State, City } from 'country-state-city';
+
+import useFormPersist from '../hooks/useFormPersist';
 
 import Button from '../components/ui/Button';
 import Modal from '../components/ui/Modal';
@@ -94,10 +94,11 @@ export default function Record() {
     reset(formData);
   }, [formData, reset]);
 
-  // useFormPersist('crudForm', {
-  //   watch,
-  //   setValue,
-  // });
+  const { clearDataFromStorage } = useFormPersist('crudForm', {
+    skip: isEditing,
+    watch,
+    setValue,
+  });
 
   const email = watch('email');
   const country = watch('profile.country');
@@ -156,6 +157,7 @@ export default function Record() {
       if (response && 'error' in response) {
         console.error('Error when creating record', response.error);
       } else {
+        clearDataFromStorage();
         setIsModalOpen(true);
         setNewRecordId(response.data.id);
         setSuccessMessage(`Record with id ${response.data.id} successfully created`);

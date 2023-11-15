@@ -31,7 +31,7 @@ export default function Table({ data, onDeleteRecord, refetch }: TableProps) {
   const { state } = location;
 
   useEffect(() => {
-    if (state?.id) {
+    if (state) {
       setHighlightedRowId(state.id);
     }
   }, [state]);
